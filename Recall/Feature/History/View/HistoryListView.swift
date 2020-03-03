@@ -29,7 +29,7 @@ struct HistoryListView: View {
                     UITableView.appearance().separatorStyle = .none
                 }
                 
-                ReloadButton {
+                ReloadButton(isLoading: $viewModel.isLoading) {
                     
                 }
                 .offset(x: -20, y: -20)

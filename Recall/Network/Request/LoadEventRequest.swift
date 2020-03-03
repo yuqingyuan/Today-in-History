@@ -13,6 +13,4 @@ import SwiftyJSON
 
 struct LoadEventRequest {
     
-    
-    
 }
