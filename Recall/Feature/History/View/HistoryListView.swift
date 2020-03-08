@@ -17,6 +17,7 @@ struct HistoryListView: View {
                 List(viewModel.events) { model in
                     IntroCellView(viewModel: model)
                         .frame(width: nil, height: 140, alignment: .center)
+                        .shadow(color: .gray, radius: 6, x: 0, y: 5)
                 }
                 .listRowBackground(Color(.clear))
                 .listStyle(PlainListStyle())
