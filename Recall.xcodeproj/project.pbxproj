@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05138F49240C9CEE00F8CC60 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05138F48240C9CEE00F8CC60 /* EventViewModel.swift */; };
-		05138F4B240CA2E600F8CC60 /* LoadEventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05138F4A240CA2E600F8CC60 /* LoadEventRequest.swift */; };
+		05138F4B240CA2E600F8CC60 /* HistoryEventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05138F4A240CA2E600F8CC60 /* HistoryEventRequest.swift */; };
 		05138F4D240CDCD200F8CC60 /* OpenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05138F4C240CDCD200F8CC60 /* OpenAPI.swift */; };
 		05138F50240D019C00F8CC60 /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05138F4F240D019C00F8CC60 /* EventListViewModel.swift */; };
 		05138F53240D47EB00F8CC60 /* ReloadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05138F52240D47EB00F8CC60 /* ReloadButton.swift */; };
@@ -52,7 +52,7 @@
 
 /* Begin PBXFileReference section */
 		05138F48240C9CEE00F8CC60 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
-		05138F4A240CA2E600F8CC60 /* LoadEventRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadEventRequest.swift; sourceTree = "<group>"; };
+		05138F4A240CA2E600F8CC60 /* HistoryEventRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEventRequest.swift; sourceTree = "<group>"; };
 		05138F4C240CDCD200F8CC60 /* OpenAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPI.swift; sourceTree = "<group>"; };
 		05138F4F240D019C00F8CC60 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
 		05138F52240D47EB00F8CC60 /* ReloadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadButton.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		05138F4E240CE11400F8CC60 /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				05138F4A240CA2E600F8CC60 /* LoadEventRequest.swift */,
+				05138F4A240CA2E600F8CC60 /* HistoryEventRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -413,7 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05138F4D240CDCD200F8CC60 /* OpenAPI.swift in Sources */,
-				05138F4B240CA2E600F8CC60 /* LoadEventRequest.swift in Sources */,
+				05138F4B240CA2E600F8CC60 /* HistoryEventRequest.swift in Sources */,
 				05D60ECE24091312005CD73D /* PageView.swift in Sources */,
 				05D60ED7240B90C2005CD73D /* SettingsView.swift in Sources */,
 				05D60ED4240A51DF005CD73D /* PageControl.swift in Sources */,
@@ -598,6 +598,7 @@
 				DEVELOPMENT_TEAM = 6E5KV5Z7QF;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Recall/Resource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -621,6 +622,7 @@
 				DEVELOPMENT_TEAM = 6E5KV5Z7QF;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Recall/Resource/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

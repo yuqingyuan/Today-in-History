@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct HistoryEvent {
+struct HistoryEvent: Codable {
     let picUrl: String?
     let title: String
     let year: String
-    let month: String
-    let day: String
+    let month: Int
+    let day: Int
     let details: String
 }

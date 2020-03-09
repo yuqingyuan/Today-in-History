@@ -15,25 +15,21 @@ struct ReloadButton: View {
     let action: () -> Void
     private var animation: Animation {
         Animation.linear(duration: 1)
-            .repeatCount(isLoading ? .max : 0, autoreverses: false)
+            .repeatCount(.max, autoreverses: false)
     }
 
     var body: some View {
-        VStack {
-            Button(action: {
-                self.action()
-            }, label: {
-                Image(systemName: "arrow.2.circlepath")
-                    .frame(width: 60, height: 60, alignment: .center)
-                    .foregroundColor(.black)
-                    .background(Color(.systemGray5))
-                    .cornerRadius(30)
-                    .shadow(radius: 10)
-                    .rotationEffect(.radians(isLoading ? .pi*2 : 0))
-                    .animation(animation)
-            })
-            .disabled(isLoading)
-        }
+        Button(action: {
+            self.action()
+        }, label: {
+            Image(systemName: "arrow.2.circlepath")
+                .frame(width: 60, height: 60, alignment: .center)
+                .rotationEffect(.radians(isLoading ? .pi*2 : 0))
+                .animation(isLoading ? animation : Animation.default)
+        })
+        .disabled(isLoading)
+        .background(Color(UIColor.systemGray5))
+        .cornerRadius(30)
     }
 }
 
@@ -53,5 +49,6 @@ struct ReloadButton_Previews: PreviewProvider {
     
     static var previews: some View {
         ReloadButtonPreview()
+            .shadow(radius: 6)
     }
 }
