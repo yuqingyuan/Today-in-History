@@ -7,19 +7,23 @@
 //
 
 import Foundation
+import Combine
 
 class EventListViewModel: ObservableObject {
     
     @Published var events: [EventViewModel] = []
     @Published var isLoading: Bool = false
     
-    let request = HistoryEventRequest()
-    
-    init() {
-        
-    }
+    private let publisher = HistoryEventRequest().publisher
+    private var cancellable: Cancellable? = nil
     
     func fetch() {
-        
+        self.isLoading = true
+        self.cancellable = publisher
+            .sink(receiveCompletion: { complete in
+                self.isLoading = false
+            }, receiveValue: { value in
+                self.events = value
+            })
     }
 }

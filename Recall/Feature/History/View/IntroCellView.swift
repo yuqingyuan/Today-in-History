@@ -35,16 +35,18 @@ struct IntroCellView: View {
                                 Image(systemName: "photo")
                             }
                             .resizable()
-                            .frame(width: geo.size.height*0.5, height: geo.size.height*0.5, alignment: .center)
+                            .frame(width: geo.size.height*0.6, height: geo.size.height*0.6, alignment: .center)
                             .cornerRadius(12)
                             .padding([.leading], 14)
 
                             VStack(alignment: .leading, spacing: 0) {
                                 Text(self.viewModel.title)
+                                    .font(.headline)
                                     .lineLimit(1)
                                 Text(self.viewModel.detail)
+                                    .font(.subheadline)
                             }
-                            .frame(width: nil, height: geo.size.height*0.5, alignment: .topLeading)
+                            .frame(width: nil, height: geo.size.height*0.6, alignment: .topLeading)
 
                             Spacer()
 

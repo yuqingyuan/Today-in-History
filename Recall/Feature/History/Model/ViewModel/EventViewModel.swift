@@ -21,8 +21,8 @@ class EventViewModel: Identifiable {
         return nil
     }
     var dateStr: String { "\(event.year)年\(event.month)月\(event.day)日" }
-    var title: String { event.title }
-    var detail: String { event.details }
+    var title: String { event.title.trimmingCharacters(in: .whitespaces) }
+    var detail: String { event.details.trimmingCharacters(in: .whitespaces) }
     
     init(_ id: Int, event: HistoryEvent) {
         self.id = id

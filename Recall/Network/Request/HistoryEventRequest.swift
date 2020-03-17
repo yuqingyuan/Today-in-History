@@ -9,21 +9,34 @@
 import Foundation
 import Combine
 
-fileprivate struct HistoryEventResponse: Codable {
-    let code: Int
-    let msg: String
-    let data: [HistoryEvent]
-}
-
 struct HistoryEventRequest {
-    var publisher: AnyPublisher<[HistoryEvent], Error> {
+    
+    var publisher: AnyPublisher<[EventViewModel], Error> {
+        eventPublisher()
+            .map { $0.enumerated().map { EventViewModel($0.offset, event: $0.element) } }
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+    
+    private var eventRequest: URLRequest {
         var request = URLRequest(url: URL(string: OpenAPI.eventApi)!)
-        request.addValue(OpenAPI.appID, forHTTPHeaderField: "app_id")
-        request.addValue(OpenAPI.appSecret, forHTTPHeaderField: "app_secret")
-        return URLSession.shared.dataTaskPublisher(for: request)
+        request.allHTTPHeaderFields = ["app_id": OpenAPI.appID, "app_secret": OpenAPI.appSecret]
+        return request
+    }
+    
+    private struct HistoryEventResponse: Codable {
+        let code: Int
+        let msg: String
+        let data: [HistoryEvent]
+    }
+    
+    private func eventPublisher() -> AnyPublisher<[HistoryEvent], Error> {
+        URLSession.shared
+            .dataTaskPublisher(for: eventRequest)
             .map { $0.data }
             .decode(type: HistoryEventResponse.self, decoder: JSONDecoder())
             .map { $0.data }
             .eraseToAnyPublisher()
     }
+    
 }

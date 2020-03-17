@@ -30,16 +30,13 @@ struct HistoryListView: View {
                 .listRowBackground(Color(.clear))
                 .listStyle(PlainListStyle())
                 .navigationBarTitle(Text("历史上的今天"), displayMode: .automatic)
-                .navigationBarItems(trailing:
-                    NavigationLink(destination: SettingsView()) {
-                        Image(systemName: "gear")
-                })
                 .onAppear() {
                     UITableView.appearance().separatorStyle = .none
+                    self.viewModel.fetch()
                 }
                 
                 ReloadButton(isLoading: $viewModel.isLoading) {
-                    
+                    self.viewModel.fetch()
                 }
                 .shadow(radius: 10)
                 .offset(x: -20, y: -20)
