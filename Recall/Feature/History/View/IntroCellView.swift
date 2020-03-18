@@ -14,57 +14,47 @@ struct IntroCellView: View {
     @State var viewModel: EventViewModel
     
     var body: some View {
-        Button(action: {
-            
-        }) {
-            GeometryReader { geo in
-                VStack(alignment: .center, spacing: 0) {
-                    HStack(alignment: .center, spacing: 12) {
-                        Image(systemName: "calendar")
-                        Text(self.viewModel.dateStr)
-                        Spacer()
-                    }
-                    .frame(width: geo.size.width, height: geo.size.height/5.0, alignment: .center)
-                    .padding([.leading], 30)
-
-                    Divider()
-                    
-                    HStack {
-                        HStack {
-                            KFImage(self.viewModel.picURL).placeholder {
-                                Image(systemName: "photo")
-                            }
-                            .resizable()
-                            .frame(width: geo.size.height*0.6, height: geo.size.height*0.6, alignment: .center)
-                            .cornerRadius(12)
-                            .padding([.leading], 14)
-
-                            VStack(alignment: .leading, spacing: 0) {
-                                Text(self.viewModel.title)
-                                    .font(.headline)
-                                    .lineLimit(1)
-                                Text(self.viewModel.detail)
-                                    .font(.subheadline)
-                            }
-                            .frame(width: nil, height: geo.size.height*0.6, alignment: .topLeading)
-
-                            Spacer()
-
-                            Button(action: {
-
-                            }, label: {
-                                Image(systemName: "chevron.right")
-                            })
-                            .padding([.trailing], 10)
-                        }
-                    }
-                    .frame(width: geo.size.width, height: 4.0*geo.size.height/5.0, alignment: .center)
+        GeometryReader { geo in
+            VStack(alignment: .center, spacing: 0) {
+                HStack(alignment: .center, spacing: 12) {
+                    Image(systemName: "calendar")
+                    Text(self.viewModel.dateStr)
+                    Spacer()
                 }
-                .contentShape(Rectangle())
-                .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
+                .frame(width: geo.size.width, height: geo.size.height/5.0, alignment: .center)
+                .padding([.leading], 30)
+
+                Divider()
+
+                HStack {
+                    HStack {
+                        KFImage(self.viewModel.picURL).placeholder {
+                            Image(systemName: "photo")
+                        }
+                        .resizable()
+                        .frame(width: geo.size.height*0.6, height: geo.size.height*0.6, alignment: .center)
+                        .cornerRadius(12)
+                        .padding([.leading], 14)
+
+                        VStack(alignment: .leading, spacing: 0) {
+                            Text(self.viewModel.title)
+                                .font(.headline)
+                                .lineLimit(1)
+                            Text(self.viewModel.detail)
+                                .font(.subheadline)
+                        }
+                        .frame(width: nil, height: geo.size.height*0.6, alignment: .topLeading)
+
+                        Spacer()
+
+                        Image(systemName: "chevron.right")
+                            .padding([.trailing], 10)
+                    }
+                }
+                .frame(width: geo.size.width, height: 4.0*geo.size.height/5.0, alignment: .center)
             }
+            .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
         }
-        .buttonStyle(PlainButtonStyle())
         .background(Color(UIColor.systemGray5))
         .cornerRadius(20)
     }

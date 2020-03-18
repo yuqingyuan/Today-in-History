@@ -8,27 +8,45 @@
 
 import SwiftUI
 
-struct HistoryListView: View {
+struct ListViewCell: View {
+    let viewModel: EventViewModel
     @Environment(\.colorScheme) var colorScheme: ColorScheme
+    @State private var longPressTap = false
+    
+    var body: some View {
+        HStack {
+            if self.colorScheme == .light {
+                IntroCellView(viewModel: viewModel)
+                    .shadow(color: Color(UIColor.systemGray3), radius: 6, x: 0, y: 5)
+            } else {
+                IntroCellView(viewModel: viewModel)
+            }
+        }
+        .frame(width: nil, height: 140, alignment: .center)
+        .padding([.top, .bottom], 8)
+        .opacity(self.longPressTap ? 0.4 : 1.0)
+        .onTapGesture {
+            
+        }
+        .onLongPressGesture(minimumDuration: .infinity, maximumDistance: .infinity, pressing: { pressing in
+            self.longPressTap = pressing
+        }) {
+            
+        }
+        .animation(.default)
+    }
+}
+
+struct HistoryListView: View {
     @ObservedObject var viewModel = EventListViewModel()
     
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
                 List(viewModel.events) { model in
-                    if self.colorScheme == .light {
-                        IntroCellView(viewModel: model)
-                            .frame(width: nil, height: 140, alignment: .center)
-                            .shadow(color: Color(UIColor.systemGray3), radius: 6, x: 0, y: 5)
-                            .padding([.bottom], 10)
-                    } else {
-                        IntroCellView(viewModel: model)
-                            .frame(width: nil, height: 140, alignment: .center)
-                            .padding([.bottom], 10)
-                    }
+                    ListViewCell(viewModel: model)
                 }
                 .listRowBackground(Color(.clear))
-                .listStyle(PlainListStyle())
                 .navigationBarTitle(Text("历史上的今天"), displayMode: .automatic)
                 .onAppear() {
                     UITableView.appearance().separatorStyle = .none

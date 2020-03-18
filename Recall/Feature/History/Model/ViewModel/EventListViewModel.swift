@@ -18,10 +18,10 @@ class EventListViewModel: ObservableObject {
     private var cancellable: Cancellable? = nil
     
     func fetch() {
-        self.isLoading = true
+        self.isLoading.toggle()
         self.cancellable = publisher
             .sink(receiveCompletion: { complete in
-                self.isLoading = false
+                self.isLoading.toggle()
             }, receiveValue: { value in
                 self.events = value
             })
