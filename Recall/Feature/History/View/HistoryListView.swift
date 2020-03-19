@@ -11,29 +11,24 @@ import SwiftUI
 struct ListViewCell: View {
     let viewModel: EventViewModel
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    @State private var longPressTap = false
+    @State private var action: Int?
     
     var body: some View {
-        HStack {
-            if self.colorScheme == .light {
+        Button(action: {
+            self.action = 0
+        }) {
+            ZStack {
+                NavigationLink(destination: HistoryDetailView(), tag: 0, selection: $action) {
+                    EmptyView()
+                }
+                
                 IntroCellView(viewModel: viewModel)
-                    .shadow(color: Color(UIColor.systemGray3), radius: 6, x: 0, y: 5)
-            } else {
-                IntroCellView(viewModel: viewModel)
+                    .shadow(color: self.colorScheme == .light ? Color(UIColor.systemGray3) : .clear, radius: 6, x: 0, y: 5)
             }
         }
+        .buttonStyle(PlainButtonStyle())
         .frame(width: nil, height: 140, alignment: .center)
         .padding([.top, .bottom], 8)
-        .opacity(self.longPressTap ? 0.4 : 1.0)
-        .onTapGesture {
-            
-        }
-        .onLongPressGesture(minimumDuration: .infinity, maximumDistance: .infinity, pressing: { pressing in
-            self.longPressTap = pressing
-        }) {
-            
-        }
-        .animation(.default)
     }
 }
 
@@ -43,8 +38,10 @@ struct HistoryListView: View {
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
-                List(viewModel.events) { model in
-                    ListViewCell(viewModel: model)
+                List {
+                    ForEach(viewModel.events) {
+                        ListViewCell(viewModel: $0)
+                    }
                 }
                 .listRowBackground(Color(.clear))
                 .navigationBarTitle(Text("历史上的今天"), displayMode: .automatic)

@@ -22,7 +22,14 @@ class EventViewModel: Identifiable {
     }
     var dateStr: String { "\(event.year)年\(event.month)月\(event.day)日" }
     var title: String { event.title.trimmingCharacters(in: .whitespaces) }
-    var detail: String { event.details.trimmingCharacters(in: .whitespaces) }
+    var detail: String {
+        var str = event.details
+        //使用的数据源有问题,有新的数据源后替换
+        if let range = str.range(of: "if(isMobile()){cambrian.render(\'body\')}") {
+            str.removeSubrange(range)
+        }
+        return str.trimmingCharacters(in: .whitespaces)
+    }
     
     init(_ id: Int, event: HistoryEvent) {
         self.id = id
