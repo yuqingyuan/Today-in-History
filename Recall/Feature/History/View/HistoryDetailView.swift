@@ -7,15 +7,60 @@
 //
 
 import SwiftUI
+import KingfisherSwiftUI
 
 struct HistoryDetailView: View {
+    let viewModel: EventViewModel
+    
     var body: some View {
-        Text("施工中...")
+        ScrollView(.vertical, showsIndicators: true, content: {
+            VStack(alignment: .center, spacing: 10.0) {
+                If(viewModel.picURL != nil) {
+                    KFImage(self.viewModel.picURL).placeholder {
+                        Image(systemName: "photo")
+                    }
+                    .resizable()
+                }
+                
+                Text(viewModel.title)
+                    .font(.title)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .multilineTextAlignment(.center)
+                
+                Text(viewModel.detail)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .multilineTextAlignment(.leading)
+                    .padding([.leading, .trailing], 4.0)
+
+                HStack {
+                    Spacer()
+                    Text(viewModel.dateStr)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+            }
+        })
+        .navigationBarTitle(Text(""), displayMode: .inline)
+    }
+}
+
+struct If<Output : View> : View {
+    init?(_ value: Bool, product: @escaping () -> Output) {
+        if value {
+            self.product = product
+        } else {
+            return nil
+        }
+    }
+
+    private let product: () -> Output
+
+    var body: some View {
+        product()
     }
 }
 
 struct HistoryDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryDetailView()
+        HistoryDetailView(viewModel: EventViewModel(0, event: HistoryEvent(picUrl: nil, title: "标题", year: "2020", month: 2, day: 3, details: "内容")))
     }
 }

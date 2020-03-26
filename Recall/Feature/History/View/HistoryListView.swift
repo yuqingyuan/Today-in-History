@@ -18,7 +18,7 @@ struct ListViewCell: View {
             self.action = 0
         }) {
             ZStack {
-                NavigationLink(destination: HistoryDetailView(), tag: 0, selection: $action) {
+                NavigationLink(destination: HistoryDetailView(viewModel: viewModel), tag: 0, selection: $action) {
                     EmptyView()
                 }
                 
@@ -45,9 +45,9 @@ struct HistoryListView: View {
                 }
                 .listRowBackground(Color(.clear))
                 .navigationBarTitle(Text("历史上的今天"), displayMode: .automatic)
-                .onAppear() {
+                .listRowInsets(.none)
+                .onAppear {
                     UITableView.appearance().separatorStyle = .none
-                    self.viewModel.fetch()
                 }
                 
                 ReloadButton(isLoading: $viewModel.isLoading) {
@@ -56,6 +56,9 @@ struct HistoryListView: View {
                 .shadow(radius: 10)
                 .offset(x: -20, y: -20)
             }
+        }
+        .onAppear() {
+            self.viewModel.fetch()
         }
     }
 }
