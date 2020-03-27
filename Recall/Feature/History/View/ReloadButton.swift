@@ -14,7 +14,7 @@ struct ReloadButton: View {
 
     let action: () -> Void
     private var animation: Animation {
-        Animation.linear(duration: 1)
+        Animation.linear(duration: isLoading ? 0.5 : 0)
             .repeatCount(.max, autoreverses: false)
     }
 
@@ -25,7 +25,7 @@ struct ReloadButton: View {
             Image(systemName: "arrow.2.circlepath")
                 .frame(width: 60, height: 60, alignment: .center)
                 .rotationEffect(.radians(isLoading ? .pi*2 : 0))
-                .animation(isLoading ? animation : Animation.default)
+                .animation(animation)
         })
         .disabled(isLoading)
         .background(Color(UIColor.systemGray5))
