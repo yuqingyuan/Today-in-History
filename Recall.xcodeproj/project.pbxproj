@@ -35,6 +35,25 @@
 		05E2B21B2431D4FB0004904F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E2B21A2431D4FB0004904F /* Assets.xcassets */; };
 		05E2B21E2431D4FB0004904F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E2B21D2431D4FB0004904F /* Preview Assets.xcassets */; };
 		05E2B2232431D4FB0004904F /* WatchRecall.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 05E2B1FF2431D4FA0004904F /* WatchRecall.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		05E2B22D2431DAEC0004904F /* HistoryEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F46516240C245700B86A91 /* HistoryEvent.swift */; };
+		05E2B22E2431DAEC0004904F /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05138F48240C9CEE00F8CC60 /* EventViewModel.swift */; };
+		05E2B22F2431DAEC0004904F /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05138F4F240D019C00F8CC60 /* EventListViewModel.swift */; };
+		05E2B2302431DAF80004904F /* OpenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05138F4C240CDCD200F8CC60 /* OpenAPI.swift */; };
+		05E2B2312431DAF80004904F /* HistoryEventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05138F4A240CA2E600F8CC60 /* HistoryEventRequest.swift */; };
+		05E2B2322431DAF80004904F /* SwiftUIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B1E224318FD10004904F /* SwiftUIHelper.swift */; };
+		05E2B2332431DB1B0004904F /* HistoryEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F46516240C245700B86A91 /* HistoryEvent.swift */; };
+		05E2B2342431DB1B0004904F /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05138F48240C9CEE00F8CC60 /* EventViewModel.swift */; };
+		05E2B2352431DB1B0004904F /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05138F4F240D019C00F8CC60 /* EventListViewModel.swift */; };
+		05E2B2362431DB1B0004904F /* OpenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05138F4C240CDCD200F8CC60 /* OpenAPI.swift */; };
+		05E2B2372431DB1B0004904F /* HistoryEventRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05138F4A240CA2E600F8CC60 /* HistoryEventRequest.swift */; };
+		05E2B2382431DB1B0004904F /* SwiftUIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B1E224318FD10004904F /* SwiftUIHelper.swift */; };
+		05E2B2402431F64E0004904F /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E2B23F2431F64E0004904F /* UserNotifications.framework */; };
+		05E2B2422431F64E0004904F /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E2B2412431F64E0004904F /* UserNotificationsUI.framework */; };
+		05E2B2452431F64F0004904F /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B2442431F64F0004904F /* NotificationViewController.swift */; };
+		05E2B2482431F64F0004904F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E2B2462431F64F0004904F /* MainInterface.storyboard */; };
+		05E2B24C2431F64F0004904F /* RecallNotification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05E2B23D2431F64E0004904F /* RecallNotification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		05E2B2582431F66F0004904F /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B2572431F66F0004904F /* NotificationService.swift */; };
+		05E2B25C2431F66F0004904F /* RecallNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05E2B2552431F66F0004904F /* RecallNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		05F46517240C245700B86A91 /* HistoryEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F46516240C245700B86A91 /* HistoryEvent.swift */; };
 		7A459166240DF20300AD4CFF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7A459165240DF20300AD4CFF /* Kingfisher */; };
 		7A459168240DF20300AD4CFF /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7A459167240DF20300AD4CFF /* KingfisherSwiftUI */; };
@@ -55,6 +74,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 05E2B1FE2431D4FA0004904F;
 			remoteInfo = WatchRecall;
+		};
+		05E2B24A2431F64F0004904F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05D5B381240753060049EDED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05E2B23C2431F64E0004904F;
+			remoteInfo = RecallNotification;
+		};
+		05E2B25A2431F66F0004904F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05D5B381240753060049EDED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05E2B2542431F66F0004904F;
+			remoteInfo = RecallNotificationService;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -79,6 +112,18 @@
 				05E2B2232431D4FB0004904F /* WatchRecall.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05E2B2502431F64F0004904F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				05E2B25C2431F66F0004904F /* RecallNotificationService.appex in Embed App Extensions */,
+				05E2B24C2431F64F0004904F /* RecallNotification.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -121,6 +166,15 @@
 		05E2B21D2431D4FB0004904F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		05E2B21F2431D4FB0004904F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05E2B2202431D4FB0004904F /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		05E2B23D2431F64E0004904F /* RecallNotification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RecallNotification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		05E2B23F2431F64E0004904F /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		05E2B2412431F64E0004904F /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		05E2B2442431F64F0004904F /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		05E2B2472431F64F0004904F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		05E2B2492431F64F0004904F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05E2B2552431F66F0004904F /* RecallNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RecallNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		05E2B2572431F66F0004904F /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		05E2B2592431F66F0004904F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05F46516240C245700B86A91 /* HistoryEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEvent.swift; sourceTree = "<group>"; };
 		7A7446C12421BBE00065C2F1 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +197,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		05E2B2082431D4FB0004904F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05E2B23A2431F64E0004904F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05E2B2422431F64E0004904F /* UserNotificationsUI.framework in Frameworks */,
+				05E2B2402431F64E0004904F /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05E2B2522431F66F0004904F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -185,6 +255,9 @@
 				05E2B1E92431D3720004904F /* MacRecall */,
 				05E2B2002431D4FA0004904F /* WatchRecall */,
 				05E2B20F2431D4FB0004904F /* WatchRecall Extension */,
+				05E2B2432431F64F0004904F /* RecallNotification */,
+				05E2B2562431F66F0004904F /* RecallNotificationService */,
+				05E2B23E2431F64E0004904F /* Frameworks */,
 				05D5B38A240753060049EDED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -196,6 +269,8 @@
 				05E2B1E82431D3720004904F /* MacRecall.app */,
 				05E2B1FF2431D4FA0004904F /* WatchRecall.app */,
 				05E2B20B2431D4FB0004904F /* WatchRecall Extension.appex */,
+				05E2B23D2431F64E0004904F /* RecallNotification.appex */,
+				05E2B2552431F66F0004904F /* RecallNotificationService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -338,6 +413,34 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		05E2B23E2431F64E0004904F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05E2B23F2431F64E0004904F /* UserNotifications.framework */,
+				05E2B2412431F64E0004904F /* UserNotificationsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		05E2B2432431F64F0004904F /* RecallNotification */ = {
+			isa = PBXGroup;
+			children = (
+				05E2B2442431F64F0004904F /* NotificationViewController.swift */,
+				05E2B2462431F64F0004904F /* MainInterface.storyboard */,
+				05E2B2492431F64F0004904F /* Info.plist */,
+			);
+			path = RecallNotification;
+			sourceTree = "<group>";
+		};
+		05E2B2562431F66F0004904F /* RecallNotificationService */ = {
+			isa = PBXGroup;
+			children = (
+				05E2B2572431F66F0004904F /* NotificationService.swift */,
+				05E2B2592431F66F0004904F /* Info.plist */,
+			);
+			path = RecallNotificationService;
+			sourceTree = "<group>";
+		};
 		05F46514240C242A00B86A91 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,11 +471,14 @@
 				05D5B386240753060049EDED /* Frameworks */,
 				05D5B387240753060049EDED /* Resources */,
 				05E2B22B2431D4FB0004904F /* Embed Watch Content */,
+				05E2B2502431F64F0004904F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				05E2B2222431D4FB0004904F /* PBXTargetDependency */,
+				05E2B24B2431F64F0004904F /* PBXTargetDependency */,
+				05E2B25B2431F66F0004904F /* PBXTargetDependency */,
 			);
 			name = Recall;
 			packageProductDependencies = (
@@ -434,6 +540,40 @@
 			productReference = 05E2B20B2431D4FB0004904F /* WatchRecall Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
+		05E2B23C2431F64E0004904F /* RecallNotification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05E2B24D2431F64F0004904F /* Build configuration list for PBXNativeTarget "RecallNotification" */;
+			buildPhases = (
+				05E2B2392431F64E0004904F /* Sources */,
+				05E2B23A2431F64E0004904F /* Frameworks */,
+				05E2B23B2431F64E0004904F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecallNotification;
+			productName = RecallNotification;
+			productReference = 05E2B23D2431F64E0004904F /* RecallNotification.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		05E2B2542431F66F0004904F /* RecallNotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05E2B25D2431F66F0004904F /* Build configuration list for PBXNativeTarget "RecallNotificationService" */;
+			buildPhases = (
+				05E2B2512431F66F0004904F /* Sources */,
+				05E2B2522431F66F0004904F /* Frameworks */,
+				05E2B2532431F66F0004904F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecallNotificationService;
+			productName = RecallNotificationService;
+			productReference = 05E2B2552431F66F0004904F /* RecallNotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -454,6 +594,12 @@
 						CreatedOnToolsVersion = 11.4;
 					};
 					05E2B20A2431D4FB0004904F = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					05E2B23C2431F64E0004904F = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					05E2B2542431F66F0004904F = {
 						CreatedOnToolsVersion = 11.4;
 					};
 				};
@@ -478,6 +624,8 @@
 				05E2B1E72431D3720004904F /* MacRecall */,
 				05E2B1FE2431D4FA0004904F /* WatchRecall */,
 				05E2B20A2431D4FB0004904F /* WatchRecall Extension */,
+				05E2B23C2431F64E0004904F /* RecallNotification */,
+				05E2B2542431F66F0004904F /* RecallNotificationService */,
 			);
 		};
 /* End PBXProject section */
@@ -521,6 +669,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		05E2B23B2431F64E0004904F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05E2B2482431F64F0004904F /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05E2B2532431F66F0004904F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -546,8 +709,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05E2B2302431DAF80004904F /* OpenAPI.swift in Sources */,
+				05E2B2322431DAF80004904F /* SwiftUIHelper.swift in Sources */,
+				05E2B2312431DAF80004904F /* HistoryEventRequest.swift in Sources */,
 				05E2B1ED2431D3720004904F /* ContentView.swift in Sources */,
+				05E2B22E2431DAEC0004904F /* EventViewModel.swift in Sources */,
+				05E2B22F2431DAEC0004904F /* EventListViewModel.swift in Sources */,
 				05E2B1EB2431D3720004904F /* AppDelegate.swift in Sources */,
+				05E2B22D2431DAEC0004904F /* HistoryEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,11 +724,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05E2B2362431DB1B0004904F /* OpenAPI.swift in Sources */,
 				05E2B2132431D4FB0004904F /* HostingController.swift in Sources */,
 				05E2B2112431D4FB0004904F /* ContentView.swift in Sources */,
 				05E2B2172431D4FB0004904F /* NotificationController.swift in Sources */,
+				05E2B2382431DB1B0004904F /* SwiftUIHelper.swift in Sources */,
 				05E2B2152431D4FB0004904F /* ExtensionDelegate.swift in Sources */,
+				05E2B2372431DB1B0004904F /* HistoryEventRequest.swift in Sources */,
 				05E2B2192431D4FB0004904F /* NotificationView.swift in Sources */,
+				05E2B2352431DB1B0004904F /* EventListViewModel.swift in Sources */,
+				05E2B2342431DB1B0004904F /* EventViewModel.swift in Sources */,
+				05E2B2332431DB1B0004904F /* HistoryEvent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05E2B2392431F64E0004904F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05E2B2452431F64F0004904F /* NotificationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05E2B2512431F66F0004904F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05E2B2582431F66F0004904F /* NotificationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +766,16 @@
 			isa = PBXTargetDependency;
 			target = 05E2B1FE2431D4FA0004904F /* WatchRecall */;
 			targetProxy = 05E2B2212431D4FB0004904F /* PBXContainerItemProxy */;
+		};
+		05E2B24B2431F64F0004904F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05E2B23C2431F64E0004904F /* RecallNotification */;
+			targetProxy = 05E2B24A2431F64F0004904F /* PBXContainerItemProxy */;
+		};
+		05E2B25B2431F66F0004904F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05E2B2542431F66F0004904F /* RecallNotificationService */;
+			targetProxy = 05E2B25A2431F66F0004904F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -601,6 +802,14 @@
 				05E2B2022431D4FA0004904F /* Base */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		05E2B2462431F64F0004904F /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05E2B2472431F64F0004904F /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -723,6 +932,7 @@
 		05D5B3B7240753080049EDED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Recall/Resource/Recall.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -746,6 +956,7 @@
 		05D5B3B8240753080049EDED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Recall/Resource/Recall.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -900,6 +1111,86 @@
 			};
 			name = Release;
 		};
+		05E2B24E2431F64F0004904F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E5KV5Z7QF;
+				INFOPLIST_FILE = RecallNotification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.Recall.RecallNotification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		05E2B24F2431F64F0004904F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E5KV5Z7QF;
+				INFOPLIST_FILE = RecallNotification/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.Recall.RecallNotification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		05E2B25E2431F66F0004904F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E5KV5Z7QF;
+				INFOPLIST_FILE = RecallNotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.Recall.RecallNotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		05E2B25F2431F66F0004904F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E5KV5Z7QF;
+				INFOPLIST_FILE = RecallNotificationService/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.Recall.RecallNotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -944,6 +1235,24 @@
 			buildConfigurations = (
 				05E2B2292431D4FB0004904F /* Debug */,
 				05E2B22A2431D4FB0004904F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05E2B24D2431F64F0004904F /* Build configuration list for PBXNativeTarget "RecallNotification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05E2B24E2431F64F0004904F /* Debug */,
+				05E2B24F2431F64F0004904F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05E2B25D2431F66F0004904F /* Build configuration list for PBXNativeTarget "RecallNotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05E2B25E2431F66F0004904F /* Debug */,
+				05E2B25F2431F66F0004904F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
