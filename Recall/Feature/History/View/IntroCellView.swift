@@ -31,7 +31,7 @@ struct IntroCellView: View {
 
                 HStack {
                     HStack {
-                        If(self.hasPic) {
+                        if(self.hasPic) {
                             KFImage(self.viewModel.picURL)
                                 .resizable()
                                 .frame(width: geo.size.height*0.6, height: geo.size.height*0.6, alignment: .center)

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ListViewCell: View {
-    let viewModel: EventViewModel
+    @State var viewModel: EventViewModel
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @State private var action: Int?
     
@@ -33,22 +33,30 @@ struct ListViewCell: View {
 }
 
 struct HistoryListView: View {
+    @ObservedObject var viewModel: EventListViewModel
+    
+    var body: some View {
+        List {
+            ForEach(viewModel.events) {
+                ListViewCell(viewModel: $0)
+            }
+        }
+        .listRowBackground(Color(.clear))
+        .navigationBarTitle(Text("历史上的今天"), displayMode: .automatic)
+        .listRowInsets(.none)
+        .onAppear {
+            UITableView.appearance().separatorStyle = .none
+        }
+    }
+}
+
+struct MainView: View {
     @ObservedObject var viewModel = EventListViewModel()
     
     var body: some View {
         NavigationView {
             ZStack(alignment: .bottomTrailing) {
-                List {
-                    ForEach(viewModel.events) {
-                        ListViewCell(viewModel: $0)
-                    }
-                }
-                .listRowBackground(Color(.clear))
-                .navigationBarTitle(Text("历史上的今天"), displayMode: .automatic)
-                .listRowInsets(.none)
-                .onAppear {
-                    UITableView.appearance().separatorStyle = .none
-                }
+                HistoryListView(viewModel: viewModel)
                 
                 ReloadButton(isLoading: $viewModel.isLoading) {
                     self.viewModel.fetch()
@@ -57,7 +65,7 @@ struct HistoryListView: View {
                 .offset(x: -20, y: -20)
             }
         }
-        .onAppear() {
+        .onAppear {
             self.viewModel.fetch()
         }
     }
@@ -66,7 +74,7 @@ struct HistoryListView: View {
 #if DEBUG
 struct HistoryListView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryListView()
+        MainView()
     }
 }
 #endif

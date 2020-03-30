@@ -10,7 +10,7 @@ import SwiftUI
 import KingfisherSwiftUI
 
 struct HistoryDetailView: View {
-    let viewModel: EventViewModel
+    @State var viewModel: EventViewModel
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: true, content: {
