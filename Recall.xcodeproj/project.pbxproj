@@ -16,11 +16,25 @@
 		05D5B396240753080049EDED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05D5B395240753080049EDED /* Assets.xcassets */; };
 		05D5B399240753080049EDED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05D5B398240753080049EDED /* Preview Assets.xcassets */; };
 		05D5B39C240753080049EDED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05D5B39A240753080049EDED /* LaunchScreen.storyboard */; };
-		05D5B3A7240753080049EDED /* RecallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D5B3A6240753080049EDED /* RecallTests.swift */; };
-		05D5B3B2240753080049EDED /* RecallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D5B3B1240753080049EDED /* RecallUITests.swift */; };
 		05D60EC82408E9C5005CD73D /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D60EC72408E9C5005CD73D /* HistoryListView.swift */; };
 		05D60ED9240BAB29005CD73D /* IntroCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D60ED8240BAB29005CD73D /* IntroCellView.swift */; };
 		05E2B1E324318FD10004904F /* SwiftUIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B1E224318FD10004904F /* SwiftUIHelper.swift */; };
+		05E2B1EB2431D3720004904F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B1EA2431D3720004904F /* AppDelegate.swift */; };
+		05E2B1ED2431D3720004904F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B1EC2431D3720004904F /* ContentView.swift */; };
+		05E2B1EF2431D3740004904F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E2B1EE2431D3740004904F /* Assets.xcassets */; };
+		05E2B1F22431D3740004904F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E2B1F12431D3740004904F /* Preview Assets.xcassets */; };
+		05E2B1F52431D3740004904F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E2B1F32431D3740004904F /* Main.storyboard */; };
+		05E2B2032431D4FA0004904F /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E2B2012431D4FA0004904F /* Interface.storyboard */; };
+		05E2B2052431D4FA0004904F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E2B2042431D4FA0004904F /* Assets.xcassets */; };
+		05E2B20C2431D4FB0004904F /* WatchRecall Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05E2B20B2431D4FB0004904F /* WatchRecall Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		05E2B2112431D4FB0004904F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B2102431D4FB0004904F /* ContentView.swift */; };
+		05E2B2132431D4FB0004904F /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B2122431D4FB0004904F /* HostingController.swift */; };
+		05E2B2152431D4FB0004904F /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B2142431D4FB0004904F /* ExtensionDelegate.swift */; };
+		05E2B2172431D4FB0004904F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B2162431D4FB0004904F /* NotificationController.swift */; };
+		05E2B2192431D4FB0004904F /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B2182431D4FB0004904F /* NotificationView.swift */; };
+		05E2B21B2431D4FB0004904F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E2B21A2431D4FB0004904F /* Assets.xcassets */; };
+		05E2B21E2431D4FB0004904F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E2B21D2431D4FB0004904F /* Preview Assets.xcassets */; };
+		05E2B2232431D4FB0004904F /* WatchRecall.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 05E2B1FF2431D4FA0004904F /* WatchRecall.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		05F46517240C245700B86A91 /* HistoryEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F46516240C245700B86A91 /* HistoryEvent.swift */; };
 		7A459166240DF20300AD4CFF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7A459165240DF20300AD4CFF /* Kingfisher */; };
 		7A459168240DF20300AD4CFF /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7A459167240DF20300AD4CFF /* KingfisherSwiftUI */; };
@@ -28,21 +42,46 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		05D5B3A3240753080049EDED /* PBXContainerItemProxy */ = {
+		05E2B20D2431D4FB0004904F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 05D5B381240753060049EDED /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 05D5B388240753060049EDED;
-			remoteInfo = Recall;
+			remoteGlobalIDString = 05E2B20A2431D4FB0004904F;
+			remoteInfo = "WatchRecall Extension";
 		};
-		05D5B3AE240753080049EDED /* PBXContainerItemProxy */ = {
+		05E2B2212431D4FB0004904F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 05D5B381240753060049EDED /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 05D5B388240753060049EDED;
-			remoteInfo = Recall;
+			remoteGlobalIDString = 05E2B1FE2431D4FA0004904F;
+			remoteInfo = WatchRecall;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		05E2B2272431D4FB0004904F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				05E2B20C2431D4FB0004904F /* WatchRecall Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05E2B22B2431D4FB0004904F /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				05E2B2232431D4FB0004904F /* WatchRecall.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		05138F48240C9CEE00F8CC60 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
@@ -56,16 +95,32 @@
 		05D5B398240753080049EDED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		05D5B39B240753080049EDED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05D5B39D240753080049EDED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05D5B3A2240753080049EDED /* RecallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecallTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		05D5B3A6240753080049EDED /* RecallTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecallTests.swift; sourceTree = "<group>"; };
-		05D5B3A8240753080049EDED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05D5B3AD240753080049EDED /* RecallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecallUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		05D5B3B1240753080049EDED /* RecallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecallUITests.swift; sourceTree = "<group>"; };
-		05D5B3B3240753080049EDED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05D60EBF2407B7F0005CD73D /* Recall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Recall.entitlements; sourceTree = "<group>"; };
 		05D60EC72408E9C5005CD73D /* HistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListView.swift; sourceTree = "<group>"; };
 		05D60ED8240BAB29005CD73D /* IntroCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCellView.swift; sourceTree = "<group>"; };
 		05E2B1E224318FD10004904F /* SwiftUIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIHelper.swift; sourceTree = "<group>"; };
+		05E2B1E82431D3720004904F /* MacRecall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacRecall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05E2B1EA2431D3720004904F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		05E2B1EC2431D3720004904F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		05E2B1EE2431D3740004904F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05E2B1F12431D3740004904F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		05E2B1F42431D3740004904F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		05E2B1F62431D3740004904F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05E2B1F72431D3740004904F /* MacRecall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MacRecall.entitlements; sourceTree = "<group>"; };
+		05E2B1FB2431D3E30004904F /* Recall.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = Recall.entitlements; path = Recall/Resource/Recall.entitlements; sourceTree = SOURCE_ROOT; };
+		05E2B1FF2431D4FA0004904F /* WatchRecall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchRecall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05E2B2022431D4FA0004904F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		05E2B2042431D4FA0004904F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05E2B2062431D4FA0004904F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05E2B20B2431D4FB0004904F /* WatchRecall Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchRecall Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		05E2B2102431D4FB0004904F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		05E2B2122431D4FB0004904F /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		05E2B2142431D4FB0004904F /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		05E2B2162431D4FB0004904F /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		05E2B2182431D4FB0004904F /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		05E2B21A2431D4FB0004904F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05E2B21D2431D4FB0004904F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		05E2B21F2431D4FB0004904F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05E2B2202431D4FB0004904F /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		05F46516240C245700B86A91 /* HistoryEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEvent.swift; sourceTree = "<group>"; };
 		7A7446C12421BBE00065C2F1 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,14 +135,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		05D5B39F240753080049EDED /* Frameworks */ = {
+		05E2B1E52431D3720004904F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		05D5B3AA240753080049EDED /* Frameworks */ = {
+		05E2B2082431D4FB0004904F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -127,8 +182,9 @@
 			isa = PBXGroup;
 			children = (
 				05D5B38B240753060049EDED /* Recall */,
-				05D5B3A5240753080049EDED /* RecallTests */,
-				05D5B3B0240753080049EDED /* RecallUITests */,
+				05E2B1E92431D3720004904F /* MacRecall */,
+				05E2B2002431D4FA0004904F /* WatchRecall */,
+				05E2B20F2431D4FB0004904F /* WatchRecall Extension */,
 				05D5B38A240753060049EDED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -137,8 +193,9 @@
 			isa = PBXGroup;
 			children = (
 				05D5B389240753060049EDED /* 历史上的今天.app */,
-				05D5B3A2240753080049EDED /* RecallTests.xctest */,
-				05D5B3AD240753080049EDED /* RecallUITests.xctest */,
+				05E2B1E82431D3720004904F /* MacRecall.app */,
+				05E2B1FF2431D4FA0004904F /* WatchRecall.app */,
+				05E2B20B2431D4FB0004904F /* WatchRecall Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,24 +220,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		05D5B3A5240753080049EDED /* RecallTests */ = {
-			isa = PBXGroup;
-			children = (
-				05D5B3A6240753080049EDED /* RecallTests.swift */,
-				05D5B3A8240753080049EDED /* Info.plist */,
-			);
-			path = RecallTests;
-			sourceTree = "<group>";
-		};
-		05D5B3B0240753080049EDED /* RecallUITests */ = {
-			isa = PBXGroup;
-			children = (
-				05D5B3B1240753080049EDED /* RecallUITests.swift */,
-				05D5B3B3240753080049EDED /* Info.plist */,
-			);
-			path = RecallUITests;
-			sourceTree = "<group>";
-		};
 		05D60EC32408C482005CD73D /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,8 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				05D5B397240753080049EDED /* Preview Content */,
-				05D60EBF2407B7F0005CD73D /* Recall.entitlements */,
 				05D5B395240753080049EDED /* Assets.xcassets */,
+				05E2B1FB2431D3E30004904F /* Recall.entitlements */,
 				05D5B39A240753080049EDED /* LaunchScreen.storyboard */,
 				05D5B39D240753080049EDED /* Info.plist */,
 			);
@@ -225,6 +264,78 @@
 				05E2B1E224318FD10004904F /* SwiftUIHelper.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		05E2B1E92431D3720004904F /* MacRecall */ = {
+			isa = PBXGroup;
+			children = (
+				05E2B1EA2431D3720004904F /* AppDelegate.swift */,
+				05E2B1EC2431D3720004904F /* ContentView.swift */,
+				05E2B1FC2431D4090004904F /* Resource */,
+			);
+			path = MacRecall;
+			sourceTree = "<group>";
+		};
+		05E2B1F02431D3740004904F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				05E2B1F12431D3740004904F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		05E2B1FC2431D4090004904F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				05E2B1F02431D3740004904F /* Preview Content */,
+				05E2B1EE2431D3740004904F /* Assets.xcassets */,
+				05E2B1F32431D3740004904F /* Main.storyboard */,
+				05E2B1F62431D3740004904F /* Info.plist */,
+				05E2B1F72431D3740004904F /* MacRecall.entitlements */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		05E2B2002431D4FA0004904F /* WatchRecall */ = {
+			isa = PBXGroup;
+			children = (
+				05E2B2012431D4FA0004904F /* Interface.storyboard */,
+				05E2B2042431D4FA0004904F /* Assets.xcassets */,
+				05E2B2062431D4FA0004904F /* Info.plist */,
+			);
+			path = WatchRecall;
+			sourceTree = "<group>";
+		};
+		05E2B20F2431D4FB0004904F /* WatchRecall Extension */ = {
+			isa = PBXGroup;
+			children = (
+				05E2B22C2431D5770004904F /* Resource */,
+				05E2B2102431D4FB0004904F /* ContentView.swift */,
+				05E2B2122431D4FB0004904F /* HostingController.swift */,
+				05E2B2142431D4FB0004904F /* ExtensionDelegate.swift */,
+				05E2B2162431D4FB0004904F /* NotificationController.swift */,
+				05E2B2182431D4FB0004904F /* NotificationView.swift */,
+			);
+			path = "WatchRecall Extension";
+			sourceTree = "<group>";
+		};
+		05E2B21C2431D4FB0004904F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				05E2B21D2431D4FB0004904F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		05E2B22C2431D5770004904F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				05E2B21A2431D4FB0004904F /* Assets.xcassets */,
+				05E2B21F2431D4FB0004904F /* Info.plist */,
+				05E2B2202431D4FB0004904F /* PushNotificationPayload.apns */,
+				05E2B21C2431D4FB0004904F /* Preview Content */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		05F46514240C242A00B86A91 /* DataModel */ = {
@@ -256,10 +367,12 @@
 				05D5B385240753060049EDED /* Sources */,
 				05D5B386240753060049EDED /* Frameworks */,
 				05D5B387240753060049EDED /* Resources */,
+				05E2B22B2431D4FB0004904F /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				05E2B2222431D4FB0004904F /* PBXTargetDependency */,
 			);
 			name = Recall;
 			packageProductDependencies = (
@@ -270,41 +383,56 @@
 			productReference = 05D5B389240753060049EDED /* 历史上的今天.app */;
 			productType = "com.apple.product-type.application";
 		};
-		05D5B3A1240753080049EDED /* RecallTests */ = {
+		05E2B1E72431D3720004904F /* MacRecall */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 05D5B3B9240753080049EDED /* Build configuration list for PBXNativeTarget "RecallTests" */;
+			buildConfigurationList = 05E2B1F82431D3740004904F /* Build configuration list for PBXNativeTarget "MacRecall" */;
 			buildPhases = (
-				05D5B39E240753080049EDED /* Sources */,
-				05D5B39F240753080049EDED /* Frameworks */,
-				05D5B3A0240753080049EDED /* Resources */,
+				05E2B1E42431D3720004904F /* Sources */,
+				05E2B1E52431D3720004904F /* Frameworks */,
+				05E2B1E62431D3720004904F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				05D5B3A4240753080049EDED /* PBXTargetDependency */,
 			);
-			name = RecallTests;
-			productName = RecallTests;
-			productReference = 05D5B3A2240753080049EDED /* RecallTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = MacRecall;
+			productName = MacRecall;
+			productReference = 05E2B1E82431D3720004904F /* MacRecall.app */;
+			productType = "com.apple.product-type.application";
 		};
-		05D5B3AC240753080049EDED /* RecallUITests */ = {
+		05E2B1FE2431D4FA0004904F /* WatchRecall */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 05D5B3BC240753080049EDED /* Build configuration list for PBXNativeTarget "RecallUITests" */;
+			buildConfigurationList = 05E2B2282431D4FB0004904F /* Build configuration list for PBXNativeTarget "WatchRecall" */;
 			buildPhases = (
-				05D5B3A9240753080049EDED /* Sources */,
-				05D5B3AA240753080049EDED /* Frameworks */,
-				05D5B3AB240753080049EDED /* Resources */,
+				05E2B1FD2431D4FA0004904F /* Resources */,
+				05E2B2272431D4FB0004904F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				05D5B3AF240753080049EDED /* PBXTargetDependency */,
+				05E2B20E2431D4FB0004904F /* PBXTargetDependency */,
 			);
-			name = RecallUITests;
-			productName = RecallUITests;
-			productReference = 05D5B3AD240753080049EDED /* RecallUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			name = WatchRecall;
+			productName = WatchRecall;
+			productReference = 05E2B1FF2431D4FA0004904F /* WatchRecall.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		05E2B20A2431D4FB0004904F /* WatchRecall Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05E2B2242431D4FB0004904F /* Build configuration list for PBXNativeTarget "WatchRecall Extension" */;
+			buildPhases = (
+				05E2B2072431D4FB0004904F /* Sources */,
+				05E2B2082431D4FB0004904F /* Frameworks */,
+				05E2B2092431D4FB0004904F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WatchRecall Extension";
+			productName = "WatchRecall Extension";
+			productReference = 05E2B20B2431D4FB0004904F /* WatchRecall Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -312,20 +440,21 @@
 		05D5B381240753060049EDED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1140;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "俞清源";
 				TargetAttributes = {
 					05D5B388240753060049EDED = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
-					05D5B3A1240753080049EDED = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 05D5B388240753060049EDED;
+					05E2B1E72431D3720004904F = {
+						CreatedOnToolsVersion = 11.4;
 					};
-					05D5B3AC240753080049EDED = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 05D5B388240753060049EDED;
+					05E2B1FE2431D4FA0004904F = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					05E2B20A2431D4FB0004904F = {
+						CreatedOnToolsVersion = 11.4;
 					};
 				};
 			};
@@ -346,8 +475,9 @@
 			projectRoot = "";
 			targets = (
 				05D5B388240753060049EDED /* Recall */,
-				05D5B3A1240753080049EDED /* RecallTests */,
-				05D5B3AC240753080049EDED /* RecallUITests */,
+				05E2B1E72431D3720004904F /* MacRecall */,
+				05E2B1FE2431D4FA0004904F /* WatchRecall */,
+				05E2B20A2431D4FB0004904F /* WatchRecall Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -363,17 +493,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		05D5B3A0240753080049EDED /* Resources */ = {
+		05E2B1E62431D3720004904F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05E2B1F52431D3740004904F /* Main.storyboard in Resources */,
+				05E2B1F22431D3740004904F /* Preview Assets.xcassets in Resources */,
+				05E2B1EF2431D3740004904F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		05D5B3AB240753080049EDED /* Resources */ = {
+		05E2B1FD2431D4FA0004904F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05E2B2052431D4FA0004904F /* Assets.xcassets in Resources */,
+				05E2B2032431D4FA0004904F /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05E2B2092431D4FB0004904F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05E2B21E2431D4FB0004904F /* Preview Assets.xcassets in Resources */,
+				05E2B21B2431D4FB0004904F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,34 +542,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		05D5B39E240753080049EDED /* Sources */ = {
+		05E2B1E42431D3720004904F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05D5B3A7240753080049EDED /* RecallTests.swift in Sources */,
+				05E2B1ED2431D3720004904F /* ContentView.swift in Sources */,
+				05E2B1EB2431D3720004904F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		05D5B3A9240753080049EDED /* Sources */ = {
+		05E2B2072431D4FB0004904F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05D5B3B2240753080049EDED /* RecallUITests.swift in Sources */,
+				05E2B2132431D4FB0004904F /* HostingController.swift in Sources */,
+				05E2B2112431D4FB0004904F /* ContentView.swift in Sources */,
+				05E2B2172431D4FB0004904F /* NotificationController.swift in Sources */,
+				05E2B2152431D4FB0004904F /* ExtensionDelegate.swift in Sources */,
+				05E2B2192431D4FB0004904F /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		05D5B3A4240753080049EDED /* PBXTargetDependency */ = {
+		05E2B20E2431D4FB0004904F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 05D5B388240753060049EDED /* Recall */;
-			targetProxy = 05D5B3A3240753080049EDED /* PBXContainerItemProxy */;
+			target = 05E2B20A2431D4FB0004904F /* WatchRecall Extension */;
+			targetProxy = 05E2B20D2431D4FB0004904F /* PBXContainerItemProxy */;
 		};
-		05D5B3AF240753080049EDED /* PBXTargetDependency */ = {
+		05E2B2222431D4FB0004904F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 05D5B388240753060049EDED /* Recall */;
-			targetProxy = 05D5B3AE240753080049EDED /* PBXContainerItemProxy */;
+			target = 05E2B1FE2431D4FA0004904F /* WatchRecall */;
+			targetProxy = 05E2B2212431D4FB0004904F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -436,6 +585,22 @@
 				05D5B39B240753080049EDED /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		05E2B1F32431D3740004904F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05E2B1F42431D3740004904F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		05E2B2012431D4FA0004904F /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05E2B2022431D4FA0004904F /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -572,7 +737,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.Recall;
 				PRODUCT_NAME = "历史上的今天";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -595,93 +760,143 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.Recall;
 				PRODUCT_NAME = "历史上的今天";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		05D5B3BA240753080049EDED /* Debug */ = {
+		05E2B1F92431D3740004904F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacRecall/Resource/MacRecall.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"MacRecall/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = 6E5KV5Z7QF;
-				INFOPLIST_FILE = RecallTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MacRecall/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
+					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.RecallTests;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = yuqingyuan.MacRecall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recall.app/Recall";
 			};
 			name = Debug;
 		};
-		05D5B3BB240753080049EDED /* Release */ = {
+		05E2B1FA2431D3740004904F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MacRecall/Resource/MacRecall.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"MacRecall/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = 6E5KV5Z7QF;
-				INFOPLIST_FILE = RecallTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = MacRecall/Resource/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
+					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.RecallTests;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = yuqingyuan.MacRecall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Recall.app/Recall";
 			};
 			name = Release;
 		};
-		05D5B3BD240753080049EDED /* Debug */ = {
+		05E2B2252431D4FB0004904F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchRecall Extension/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = 6E5KV5Z7QF;
-				INFOPLIST_FILE = RecallUITests/Info.plist;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "WatchRecall Extension/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
+					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.RecallUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.Recall.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Recall;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Debug;
 		};
-		05D5B3BE240753080049EDED /* Release */ = {
+		05E2B2262431D4FB0004904F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchRecall Extension/Resource/Preview Content\"";
 				DEVELOPMENT_TEAM = 6E5KV5Z7QF;
-				INFOPLIST_FILE = RecallUITests/Info.plist;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "WatchRecall Extension/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
+					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.RecallUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.Recall.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Recall;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		05E2B2292431D4FB0004904F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E5KV5Z7QF;
+				IBSC_MODULE = WatchRecall_Extension;
+				INFOPLIST_FILE = WatchRecall/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.Recall.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		05E2B22A2431D4FB0004904F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E5KV5Z7QF;
+				IBSC_MODULE = WatchRecall_Extension;
+				INFOPLIST_FILE = WatchRecall/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.Recall.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Release;
 		};
@@ -706,20 +921,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		05D5B3B9240753080049EDED /* Build configuration list for PBXNativeTarget "RecallTests" */ = {
+		05E2B1F82431D3740004904F /* Build configuration list for PBXNativeTarget "MacRecall" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				05D5B3BA240753080049EDED /* Debug */,
-				05D5B3BB240753080049EDED /* Release */,
+				05E2B1F92431D3740004904F /* Debug */,
+				05E2B1FA2431D3740004904F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		05D5B3BC240753080049EDED /* Build configuration list for PBXNativeTarget "RecallUITests" */ = {
+		05E2B2242431D4FB0004904F /* Build configuration list for PBXNativeTarget "WatchRecall Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				05D5B3BD240753080049EDED /* Debug */,
-				05D5B3BE240753080049EDED /* Release */,
+				05E2B2252431D4FB0004904F /* Debug */,
+				05E2B2262431D4FB0004904F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05E2B2282431D4FB0004904F /* Build configuration list for PBXNativeTarget "WatchRecall" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05E2B2292431D4FB0004904F /* Debug */,
+				05E2B22A2431D4FB0004904F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
