@@ -12,6 +12,9 @@ import KingfisherSwiftUI
 struct IntroCellView: View {
 
     @State var viewModel: EventViewModel
+    var hasPic: Bool {
+        viewModel.picURL != nil
+    }
     
     var body: some View {
         GeometryReader { geo in
@@ -28,13 +31,13 @@ struct IntroCellView: View {
 
                 HStack {
                     HStack {
-                        KFImage(self.viewModel.picURL).placeholder {
-                            Image(systemName: "photo")
+                        If(self.hasPic) {
+                            KFImage(self.viewModel.picURL)
+                                .resizable()
+                                .frame(width: geo.size.height*0.6, height: geo.size.height*0.6, alignment: .center)
+                                .cornerRadius(12)
+                                .padding([.leading], 14)
                         }
-                        .resizable()
-                        .frame(width: geo.size.height*0.6, height: geo.size.height*0.6, alignment: .center)
-                        .cornerRadius(12)
-                        .padding([.leading], 14)
 
                         VStack(alignment: .leading, spacing: 0) {
                             Text(self.viewModel.title)
@@ -44,6 +47,9 @@ struct IntroCellView: View {
                                 .font(.subheadline)
                         }
                         .frame(width: nil, height: geo.size.height*0.6, alignment: .topLeading)
+                        .if(!self.hasPic) {
+                            $0.padding([.leading], 14)
+                        }
 
                         Spacer()
 

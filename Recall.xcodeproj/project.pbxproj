@@ -21,6 +21,7 @@
 		05D5B3B2240753080049EDED /* RecallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D5B3B1240753080049EDED /* RecallUITests.swift */; };
 		05D60EC82408E9C5005CD73D /* HistoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D60EC72408E9C5005CD73D /* HistoryListView.swift */; };
 		05D60ED9240BAB29005CD73D /* IntroCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D60ED8240BAB29005CD73D /* IntroCellView.swift */; };
+		05E2B1E324318FD10004904F /* SwiftUIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B1E224318FD10004904F /* SwiftUIHelper.swift */; };
 		05F46517240C245700B86A91 /* HistoryEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F46516240C245700B86A91 /* HistoryEvent.swift */; };
 		7A459166240DF20300AD4CFF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7A459165240DF20300AD4CFF /* Kingfisher */; };
 		7A459168240DF20300AD4CFF /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7A459167240DF20300AD4CFF /* KingfisherSwiftUI */; };
@@ -50,7 +51,7 @@
 		05138F4C240CDCD200F8CC60 /* OpenAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAPI.swift; sourceTree = "<group>"; };
 		05138F4F240D019C00F8CC60 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
 		05138F52240D47EB00F8CC60 /* ReloadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadButton.swift; sourceTree = "<group>"; };
-		05D5B389240753060049EDED /* Recall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recall.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05D5B389240753060049EDED /* 历史上的今天.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "历史上的今天.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		05D5B38C240753060049EDED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05D5B38E240753060049EDED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		05D5B395240753080049EDED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 		05D60EBF2407B7F0005CD73D /* Recall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Recall.entitlements; sourceTree = "<group>"; };
 		05D60EC72408E9C5005CD73D /* HistoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListView.swift; sourceTree = "<group>"; };
 		05D60ED8240BAB29005CD73D /* IntroCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCellView.swift; sourceTree = "<group>"; };
+		05E2B1E224318FD10004904F /* SwiftUIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIHelper.swift; sourceTree = "<group>"; };
 		05F46516240C245700B86A91 /* HistoryEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEvent.swift; sourceTree = "<group>"; };
 		7A7446C12421BBE00065C2F1 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +138,7 @@
 		05D5B38A240753060049EDED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				05D5B389240753060049EDED /* Recall.app */,
+				05D5B389240753060049EDED /* 历史上的今天.app */,
 				05D5B3A2240753080049EDED /* RecallTests.xctest */,
 				05D5B3AD240753080049EDED /* RecallUITests.xctest */,
 			);
@@ -150,6 +152,7 @@
 				05D5B38E240753060049EDED /* SceneDelegate.swift */,
 				05D60EC42408E337005CD73D /* Feature */,
 				05D60EC32408C482005CD73D /* Network */,
+				05E2B1E124318F840004904F /* Util */,
 				05D60EC52408E3C3005CD73D /* Resource */,
 			);
 			path = Recall;
@@ -219,6 +222,14 @@
 			path = History;
 			sourceTree = "<group>";
 		};
+		05E2B1E124318F840004904F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				05E2B1E224318FD10004904F /* SwiftUIHelper.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		05F46514240C242A00B86A91 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,7 +270,7 @@
 				7A459167240DF20300AD4CFF /* KingfisherSwiftUI */,
 			);
 			productName = Recall;
-			productReference = 05D5B389240753060049EDED /* Recall.app */;
+			productReference = 05D5B389240753060049EDED /* 历史上的今天.app */;
 			productType = "com.apple.product-type.application";
 		};
 		05D5B3A1240753080049EDED /* RecallTests */ = {
@@ -381,6 +392,7 @@
 				05138F50240D019C00F8CC60 /* EventListViewModel.swift in Sources */,
 				05138F49240C9CEE00F8CC60 /* EventViewModel.swift in Sources */,
 				7A7446C22421BBE00065C2F1 /* HistoryDetailView.swift in Sources */,
+				05E2B1E324318FD10004904F /* SwiftUIHelper.swift in Sources */,
 				05F46517240C245700B86A91 /* HistoryEvent.swift in Sources */,
 				05138F53240D47EB00F8CC60 /* ReloadButton.swift in Sources */,
 				05D60EC82408E9C5005CD73D /* HistoryListView.swift in Sources */,
@@ -564,7 +576,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.Recall;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "历史上的今天";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -588,7 +600,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qingyuanyu.Recall;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "历史上的今天";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

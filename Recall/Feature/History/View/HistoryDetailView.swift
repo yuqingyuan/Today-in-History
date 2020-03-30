@@ -16,10 +16,8 @@ struct HistoryDetailView: View {
         ScrollView(.vertical, showsIndicators: true, content: {
             VStack(alignment: .center, spacing: 10.0) {
                 If(viewModel.picURL != nil) {
-                    KFImage(self.viewModel.picURL).placeholder {
-                        Image(systemName: "photo")
-                    }
-                    .resizable()
+                    KFImage(self.viewModel.picURL)
+                        .resizable()
                 }
                 
                 Text(viewModel.title)
@@ -40,22 +38,6 @@ struct HistoryDetailView: View {
             }
         })
         .navigationBarTitle(Text(""), displayMode: .inline)
-    }
-}
-
-struct If<Output : View> : View {
-    init?(_ value: Bool, product: @escaping () -> Output) {
-        if value {
-            self.product = product
-        } else {
-            return nil
-        }
-    }
-
-    private let product: () -> Output
-
-    var body: some View {
-        product()
     }
 }
 
