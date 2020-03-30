@@ -9,35 +9,35 @@
 import SwiftUI
 import KingfisherSwiftUI
 
+struct HistoryDetailNaviBar: View {
+    @Environment(\.presentationMode) var mode
+    
+    var body: some View {
+        HStack(alignment: .center) {
+            Button(action: {
+                self.mode.wrappedValue.dismiss()
+            }) {
+                Image(systemName: "arrow.left")
+                    .scaledToFit()
+                    .frame(width: 38, height: 38, alignment: .center)
+            }
+            .background(Color(UIColor.systemGray5))
+            .cornerRadius(14)
+            .shadow(radius: 2)
+            
+            Spacer()
+        }
+    }
+}
+
 struct HistoryDetailView: View {
     @State var viewModel: EventViewModel
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: true, content: {
-            VStack(alignment: .center, spacing: 10.0) {
-                If(viewModel.picURL != nil) {
-                    KFImage(self.viewModel.picURL)
-                        .resizable()
-                }
-                
-                Text(viewModel.title)
-                    .font(.title)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .multilineTextAlignment(.center)
-                
-                Text(viewModel.detail)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .multilineTextAlignment(.leading)
-                    .padding([.leading, .trailing], 4.0)
-
-                HStack {
-                    Spacer()
-                    Text(viewModel.dateStr)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-            }
-        })
-        .navigationBarTitle(Text(""), displayMode: .inline)
+        VStack {
+            Text("施工中...")
+        }
+        .navigationBarItems(leading: HistoryDetailNaviBar().padding([.leading], 2))
     }
 }
 
