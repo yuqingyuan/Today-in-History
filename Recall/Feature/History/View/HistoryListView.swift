@@ -42,7 +42,6 @@ struct HistoryListView: View {
             }
         }
         .listRowBackground(Color(.clear))
-        .navigationBarTitle(Text("历史上的今天"), displayMode: .large)
         .listRowInsets(.none)
         .onAppear {
             UITableView.appearance().separatorStyle = .none
@@ -64,6 +63,10 @@ struct MainView: View {
                 .shadow(radius: 10)
                 .offset(x: -20, y: -20)
             }
+            .navigationBarTitle(Text("历史上的今天"), displayMode: .large)
+            .navigationBarItems(trailing: NavigationLink(destination: UserSettingView(), label: {
+                Image(systemName: "gear")
+            }))
         }
         .onAppear {
             self.viewModel.fetch()

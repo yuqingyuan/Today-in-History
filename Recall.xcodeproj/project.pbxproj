@@ -56,6 +56,7 @@
 		05E2B25C2431F66F0004904F /* RecallNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05E2B2552431F66F0004904F /* RecallNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		05E2B2622432D7BF0004904F /* NavigationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B2612432D7BF0004904F /* NavigationExtension.swift */; };
 		05E2B2642432E0080004904F /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B2632432E0080004904F /* DeviceHelper.swift */; };
+		05E2B26724332CB60004904F /* UserSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B26624332CB60004904F /* UserSettingView.swift */; };
 		05F46517240C245700B86A91 /* HistoryEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F46516240C245700B86A91 /* HistoryEvent.swift */; };
 		7A459166240DF20300AD4CFF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7A459165240DF20300AD4CFF /* Kingfisher */; };
 		7A459168240DF20300AD4CFF /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7A459167240DF20300AD4CFF /* KingfisherSwiftUI */; };
@@ -179,6 +180,7 @@
 		05E2B2592431F66F0004904F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05E2B2612432D7BF0004904F /* NavigationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationExtension.swift; sourceTree = "<group>"; };
 		05E2B2632432E0080004904F /* DeviceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
+		05E2B26624332CB60004904F /* UserSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingView.swift; sourceTree = "<group>"; };
 		05F46516240C245700B86A91 /* HistoryEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEvent.swift; sourceTree = "<group>"; };
 		7A7446C12421BBE00065C2F1 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -312,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				05D60EC62408E9AD005CD73D /* History */,
+				05E2B26524332C910004904F /* Settings */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -455,6 +458,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		05E2B26524332C910004904F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				05E2B26624332CB60004904F /* UserSettingView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		05F46514240C242A00B86A91 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,8 +479,8 @@
 			children = (
 				05138F52240D47EB00F8CC60 /* ReloadButton.swift */,
 				05D60ED8240BAB29005CD73D /* IntroCellView.swift */,
-				05D60EC72408E9C5005CD73D /* HistoryListView.swift */,
 				7A7446C12421BBE00065C2F1 /* HistoryDetailView.swift */,
+				05D60EC72408E9C5005CD73D /* HistoryListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -717,6 +728,7 @@
 				05E2B2642432E0080004904F /* DeviceHelper.swift in Sources */,
 				05D60EC82408E9C5005CD73D /* HistoryListView.swift in Sources */,
 				05D60ED9240BAB29005CD73D /* IntroCellView.swift in Sources */,
+				05E2B26724332CB60004904F /* UserSettingView.swift in Sources */,
 				05D5B38D240753060049EDED /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
