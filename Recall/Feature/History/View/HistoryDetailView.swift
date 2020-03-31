@@ -14,6 +14,7 @@ struct HistoryDetailNaviBarItem: View {
     
     var body: some View {
         Button(action: {
+            //MARK: This line didn't work on simulator
             self.mode.wrappedValue.dismiss()
         }) {
             Image(systemName: "arrow.left")
@@ -30,8 +31,10 @@ struct HistoryHeadView: View {
     
     var body: some View {
         KFImage(picURL)
-            .resizable()
-            .frame(width: nil, height: 260, alignment: .center)
+            .if(isPhone) {
+                $0.resizable()
+                .frame(width: nil, height: 200, alignment: .center)
+            }
             .cornerRadius(10, antialiased: true)
             .padding([.leading, .trailing])
     }
@@ -45,6 +48,7 @@ struct HistoryContentView: View {
         GeometryReader { geo in
             ScrollView(showsIndicators: false) {
                 Text(self.title)
+                    .padding([.leading, .trailing])
                     .frame(width: geo.size.width, height: nil, alignment: .center)
                     .multilineTextAlignment(.center)
                     .font(.title)
@@ -52,10 +56,9 @@ struct HistoryContentView: View {
                 Spacer(minLength: 10)
 
                 Text(self.detail)
+                    .padding([.leading, .trailing])
                     .frame(width: geo.size.width, height: nil, alignment: .center)
                     .multilineTextAlignment(.leading)
-
-                Spacer()
             }
         }
     }
@@ -78,19 +81,19 @@ struct HistoryDetailMainView: View {
             }
             
             HistoryContentView(title: viewModel.title, detail: viewModel.detail)
-                .padding()
+                .opacity(self.opacity)
+                .animation(.linear(duration: 1.0))
+                .onAppear {
+                    self.opacity = 1.0
+                }
             
             Spacer()
         }
         .edgesIgnoringSafeArea([.bottom])
         .navigationBarTitle(Text(viewModel.dateStr), displayMode: .large)
+        .navigationBarBackButtonHidden(true)
         .if(isPhone) {
             $0.navigationBarItems(leading: HistoryDetailNaviBarItem())
-        }
-        .opacity(self.opacity)
-        .animation(.linear(duration: 1.0))
-        .onAppear {
-            self.opacity = 1.0
         }
     }
 }
