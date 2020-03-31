@@ -18,7 +18,7 @@ struct ListViewCell: View {
             self.action = 0
         }) {
             ZStack {
-                NavigationLink(destination: HistoryDetailView(viewModel: viewModel), tag: 0, selection: $action) {
+                NavigationLink(destination: HistoryDetailMainView(viewModel: viewModel), tag: 0, selection: $action) {
                     EmptyView()
                 }
                 
@@ -42,7 +42,7 @@ struct HistoryListView: View {
             }
         }
         .listRowBackground(Color(.clear))
-        .navigationBarTitle(Text("历史上的今天"), displayMode: .automatic)
+        .navigationBarTitle(Text("历史上的今天"), displayMode: .large)
         .listRowInsets(.none)
         .onAppear {
             UITableView.appearance().separatorStyle = .none

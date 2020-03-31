@@ -9,40 +9,83 @@
 import SwiftUI
 import KingfisherSwiftUI
 
-struct HistoryDetailNaviBar: View {
+struct HistoryDetailNaviBarItem: View {
     @Environment(\.presentationMode) var mode
     
     var body: some View {
-        HStack(alignment: .center) {
-            Button(action: {
-                self.mode.wrappedValue.dismiss()
-            }) {
-                Image(systemName: "arrow.left")
-                    .scaledToFit()
-                    .frame(width: 38, height: 38, alignment: .center)
-            }
-            .background(Color(UIColor.systemGray5))
-            .cornerRadius(14)
-            .shadow(radius: 2)
+        Button(action: {
+            self.mode.wrappedValue.dismiss()
+        }) {
+            Image(systemName: "arrow.left")
+                .scaledToFit()
+                .frame(width: 38, height: 38, alignment: .center)
+        }
+        .background(Color(UIColor.systemGray5))
+        .cornerRadius(14)
+    }
+}
+
+struct HistoryHeadView: View {
+    let picURL: URL
+    
+    var body: some View {
+        KFImage(picURL)
+            .resizable()
+            .frame(width: nil, height: 260, alignment: .center)
+            .cornerRadius(10, antialiased: true)
+            .padding([.leading, .trailing])
+    }
+}
+
+struct HistoryContentView: View {
+    let title: String
+    let detail: String
+    
+    var body: some View {
+        ScrollView {
+            Text(title)
+                .multilineTextAlignment(.center)
+                .padding([.leading, .trailing])
+                .font(.title)
+            
+            Spacer(minLength: 10)
+            
+            Text(detail)
+                .multilineTextAlignment(.leading)
+                .padding([.leading, .trailing])
             
             Spacer()
         }
     }
 }
 
-struct HistoryDetailView: View {
+struct HistoryDetailMainView: View {
     @State var viewModel: EventViewModel
     
     var body: some View {
-        VStack {
-            Text("施工中...")
+        VStack(alignment: .center, spacing: 10) {
+            If(self.viewModel.picURL != nil) {
+                HistoryHeadView(picURL: self.viewModel.picURL!)
+            }
+            
+            HistoryContentView(title: viewModel.title, detail: viewModel.detail)
+            
+            Spacer()
         }
-        .navigationBarItems(leading: HistoryDetailNaviBar().padding([.leading], 2))
+        .edgesIgnoringSafeArea([.bottom])
+        .navigationBarTitle(Text(viewModel.dateStr), displayMode: .large)
+        .if(isPhone) {
+            $0.navigationBarItems(leading: HistoryDetailNaviBarItem())
+        }
     }
 }
 
-struct HistoryDetailView_Previews: PreviewProvider {
+#if DEBUG
+struct HistoryDetailMainView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryDetailView(viewModel: EventViewModel(0, event: HistoryEvent(picUrl: nil, title: "标题", year: "2020", month: 2, day: 3, details: "内容")))
+        NavigationView {
+            HistoryDetailMainView(viewModel: EventViewModel(0, event: HistoryEvent(picUrl: "http://www.todayonhistory.com/upic/201002/18/791933708.jpg", title: "标题", year: "2020", month: 2, day: 3, details: "内容")))
+        }
     }
 }
+#endif
