@@ -57,6 +57,9 @@
 		05E2B2622432D7BF0004904F /* NavigationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B2612432D7BF0004904F /* NavigationExtension.swift */; };
 		05E2B2642432E0080004904F /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B2632432E0080004904F /* DeviceHelper.swift */; };
 		05E2B26724332CB60004904F /* UserSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B26624332CB60004904F /* UserSettingView.swift */; };
+		05E2B26B2433339A0004904F /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B26A2433339A0004904F /* UserSetting.swift */; };
+		05E2B26F2433360A0004904F /* UserSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B26E2433360A0004904F /* UserSettingViewModel.swift */; };
+		05E2B27224336BD30004904F /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B27124336BD30004904F /* LocalNotificationService.swift */; };
 		05F46517240C245700B86A91 /* HistoryEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F46516240C245700B86A91 /* HistoryEvent.swift */; };
 		7A459166240DF20300AD4CFF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7A459165240DF20300AD4CFF /* Kingfisher */; };
 		7A459168240DF20300AD4CFF /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7A459167240DF20300AD4CFF /* KingfisherSwiftUI */; };
@@ -181,6 +184,9 @@
 		05E2B2612432D7BF0004904F /* NavigationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationExtension.swift; sourceTree = "<group>"; };
 		05E2B2632432E0080004904F /* DeviceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
 		05E2B26624332CB60004904F /* UserSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingView.swift; sourceTree = "<group>"; };
+		05E2B26A2433339A0004904F /* UserSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
+		05E2B26E2433360A0004904F /* UserSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewModel.swift; sourceTree = "<group>"; };
+		05E2B27124336BD30004904F /* LocalNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationService.swift; sourceTree = "<group>"; };
 		05F46516240C245700B86A91 /* HistoryEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEvent.swift; sourceTree = "<group>"; };
 		7A7446C12421BBE00065C2F1 /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -287,6 +293,7 @@
 				05D5B38C240753060049EDED /* AppDelegate.swift */,
 				05D60EC42408E337005CD73D /* Feature */,
 				05D60EC32408C482005CD73D /* Network */,
+				05E2B27024336BAE0004904F /* Service */,
 				05E2B1E124318F840004904F /* Util */,
 				05D60EC52408E3C3005CD73D /* Resource */,
 			);
@@ -461,9 +468,51 @@
 		05E2B26524332C910004904F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				05E2B26624332CB60004904F /* UserSettingView.swift */,
+				05E2B269243332610004904F /* Model */,
+				05E2B268243332560004904F /* View */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		05E2B268243332560004904F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				05E2B26624332CB60004904F /* UserSettingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		05E2B269243332610004904F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				05E2B26D243335E60004904F /* ViewModel */,
+				05E2B26C243335D70004904F /* DataModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		05E2B26C243335D70004904F /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				05E2B26A2433339A0004904F /* UserSetting.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		05E2B26D243335E60004904F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				05E2B26E2433360A0004904F /* UserSettingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		05E2B27024336BAE0004904F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				05E2B27124336BD30004904F /* LocalNotificationService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		05F46514240C242A00B86A91 /* DataModel */ = {
@@ -720,6 +769,8 @@
 				05138F4B240CA2E600F8CC60 /* HistoryEventRequest.swift in Sources */,
 				05138F50240D019C00F8CC60 /* EventListViewModel.swift in Sources */,
 				05138F49240C9CEE00F8CC60 /* EventViewModel.swift in Sources */,
+				05E2B26B2433339A0004904F /* UserSetting.swift in Sources */,
+				05E2B27224336BD30004904F /* LocalNotificationService.swift in Sources */,
 				7A7446C22421BBE00065C2F1 /* HistoryDetailView.swift in Sources */,
 				05E2B2622432D7BF0004904F /* NavigationExtension.swift in Sources */,
 				05E2B1E324318FD10004904F /* SwiftUIHelper.swift in Sources */,
@@ -729,6 +780,7 @@
 				05D60EC82408E9C5005CD73D /* HistoryListView.swift in Sources */,
 				05D60ED9240BAB29005CD73D /* IntroCellView.swift in Sources */,
 				05E2B26724332CB60004904F /* UserSettingView.swift in Sources */,
+				05E2B26F2433360A0004904F /* UserSettingViewModel.swift in Sources */,
 				05D5B38D240753060049EDED /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
