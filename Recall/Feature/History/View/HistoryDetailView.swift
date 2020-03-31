@@ -42,33 +42,43 @@ struct HistoryContentView: View {
     let detail: String
     
     var body: some View {
-        ScrollView {
-            Text(title)
-                .multilineTextAlignment(.center)
-                .padding([.leading, .trailing])
-                .font(.title)
-            
-            Spacer(minLength: 10)
-            
-            Text(detail)
-                .multilineTextAlignment(.leading)
-                .padding([.leading, .trailing])
-            
-            Spacer()
+        GeometryReader { geo in
+            ScrollView(showsIndicators: false) {
+                Text(self.title)
+                    .frame(width: geo.size.width, height: nil, alignment: .center)
+                    .multilineTextAlignment(.center)
+                    .font(.title)
+
+                Spacer(minLength: 10)
+
+                Text(self.detail)
+                    .frame(width: geo.size.width, height: nil, alignment: .center)
+                    .multilineTextAlignment(.leading)
+
+                Spacer()
+            }
         }
     }
 }
 
 struct HistoryDetailMainView: View {
     @State var viewModel: EventViewModel
+    @State var scale = CGSize.zero
+    @State var opacity = Double.zero
     
     var body: some View {
         VStack(alignment: .center, spacing: 10) {
             If(self.viewModel.picURL != nil) {
                 HistoryHeadView(picURL: self.viewModel.picURL!)
+                    .scaleEffect(self.scale)
+                    .animation(.spring(dampingFraction: 0.7))
+                    .onAppear {
+                        self.scale = CGSize(width: 1, height: 1)
+                    }
             }
             
             HistoryContentView(title: viewModel.title, detail: viewModel.detail)
+                .padding()
             
             Spacer()
         }
@@ -76,6 +86,11 @@ struct HistoryDetailMainView: View {
         .navigationBarTitle(Text(viewModel.dateStr), displayMode: .large)
         .if(isPhone) {
             $0.navigationBarItems(leading: HistoryDetailNaviBarItem())
+        }
+        .opacity(self.opacity)
+        .animation(.linear(duration: 1.0))
+        .onAppear {
+            self.opacity = 1.0
         }
     }
 }
