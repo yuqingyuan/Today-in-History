@@ -25,6 +25,7 @@ struct If<Output : View> : View {
     }
 }
 
+//MARK: 拓展ViewModifier
 extension View {
     func `if`<Content: View>(_ conditional: Bool, content: (Self) -> Content) -> some View {
         if conditional {
@@ -32,5 +33,12 @@ extension View {
         } else {
             return AnyView(self)
         }
+    }
+}
+
+//MARK: 对@Binding修饰的Bool类型进行取反,eg:$isOn.negative()
+extension Binding where Value == Bool {
+    public func negate() -> Binding<Bool> {
+        return Binding<Bool>(get: { !self.wrappedValue }) { _ in }
     }
 }

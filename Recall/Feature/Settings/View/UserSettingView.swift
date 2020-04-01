@@ -13,8 +13,10 @@ struct UserSettingView: View {
     
     var body: some View {
         Form {
-            Toggle(isOn: $settingViewModel.isLocalNotificationOn) {
-                Text("本地通知")
+            Section(header: Text("请在系统设置页面打开或关闭本地系统通知")) {
+                Toggle(isOn: $settingViewModel.isNotificationOn) {
+                    Text("本地通知")
+                }
             }
         }
         .navigationBarTitle(Text("设置"), displayMode: .large)
