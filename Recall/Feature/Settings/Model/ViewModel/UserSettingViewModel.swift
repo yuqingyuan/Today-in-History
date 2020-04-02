@@ -66,15 +66,14 @@ extension UserSettingViewModel {
             }
         }
     }
-    
-    enum SystemNotificationStatus: RawRepresentable {
+        
+    /// 聚合Toggle开关状态和系统通知权限
+    enum NotificationToggleStatus: RawRepresentable {
 
         case notDetermined
         case denied
         case authorized
 
-        /// 初始化系统通知权限状态枚举
-        /// - Parameter rawValue: tuple中第二个参数为当前开关状态
         init?(rawValue: (UNAuthorizationStatus, Bool)) {
             switch rawValue {
             case (.notDetermined, true): self = .notDetermined  //系统未授权
@@ -95,9 +94,10 @@ extension UserSettingViewModel {
     
     /// 根据系统接口
     private func modifyNotificationStatus(_ status: UNAuthorizationStatus, newValue: Bool) {
-        let type = SystemNotificationStatus(rawValue: (status, newValue))
+        let type = NotificationToggleStatus(rawValue: (status, newValue))
         switch type {
-        case .notDetermined: NotificationService.shared.requestAuthorization()
+        case .notDetermined:
+            NotificationService.shared.requestAuthorization()
         case .denied:
             self.isNotificationOn = false
             self.showBootAlert = true

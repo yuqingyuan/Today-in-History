@@ -12,7 +12,7 @@ enum UserSettingList: String {
     
     case notification = "消息通知"
     
-    enum Frequency: String {
+    enum notificationCycle: String, CaseIterable {
         case mon  = "周一"
         case tues = "周二"
         case wed  = "周三"
