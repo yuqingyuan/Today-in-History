@@ -70,12 +70,7 @@ struct IntroCellView: View {
 struct IntroCellView_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
-            IntroCellView(viewModel: EventViewModel(0, event: HistoryEvent(picUrl: "http://www.todayonhistory.com/upic/201002/18/791933708.jpg",
-                                                                           title: "Title",
-                                                                           year: "2020",
-                                                                           month: 3,
-                                                                           day: 2,
-                                                                           details: "content")))
+            IntroCellView(viewModel: debugViewModel)
                 .frame(width: geo.size.width-20, height: 160, alignment: .center)
                 .offset(.init(width: 10, height: 0))
                 .shadow(color: Color(UIColor.systemGray3), radius: 6, x: 0, y: 5)

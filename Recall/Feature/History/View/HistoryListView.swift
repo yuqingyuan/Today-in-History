@@ -36,13 +36,9 @@ struct HistoryListView: View {
     @ObservedObject var viewModel: EventListViewModel
     
     var body: some View {
-        List {
-            ForEach(viewModel.events) {
-                ListViewCell(viewModel: $0)
-            }
+        List(viewModel.events) {
+            ListViewCell(viewModel: $0)
         }
-        .listRowBackground(Color(.clear))
-        .listRowInsets(.none)
         .onAppear {
             UITableView.appearance().separatorStyle = .none
         }

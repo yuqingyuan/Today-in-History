@@ -16,16 +16,10 @@ class UserSettingViewModel: ObservableObject {
     
     init() {
         cancellable.append(contentsOf: [notifactionChange, foregroundChange])
-        
-        NotificationService.shared.getAuthorizationStatus {
-            switch $0 {
-            case .authorized, .provisional: self.isNotificationOn = true
-            default: self.isNotificationOn = false
-            }
-        }
+        syncNotificationStatus()
     }
     
-    //MARK: 查询通知权限状态并同步
+    /// 查询通知权限状态并同步
     var notifactionChange: AnyCancellable {
         NotificationService.shared.notificationChange
             .receive(on: DispatchQueue.main)
@@ -34,22 +28,51 @@ class UserSettingViewModel: ObservableObject {
             }
     }
 
-    //MARK: 从后台进入时同步通知权限状态
+    /// 从后台进入时同步通知权限状态
     var foregroundChange: AnyCancellable {
         NotificationCenter.default
             .publisher(for: UIApplication.willEnterForegroundNotification)
             .receive(on: DispatchQueue.main)
             .sink { _ in
-                NotificationService.shared.requestAuthorization()
+                self.syncNotificationStatus()
             }
     }
     
-    // 通知是否开启(跟随系统设置)
+    /// 同步通知权限状态
+    func syncNotificationStatus() {
+        NotificationService.shared.getAuthorizationStatus { status in
+            DispatchQueue.main.async {
+                switch status {
+                case .authorized, .provisional: self.isNotificationOn = true
+                default: self.isNotificationOn = false
+                }
+            }
+        }
+    }
+    
+    /// 通知是否开启(跟随系统设置)
     @Published var isNotificationOn: Bool = false {
         willSet {
-            if (newValue && !self.isNotificationOn) || (!newValue && self.isNotificationOn) {
-                NotificationService.shared.requestAuthorization()
+            NotificationService.shared.getAuthorizationStatus { status in
+                DispatchQueue.main.async {
+                    self.modifyNotificationStatus(status, newValue: newValue)
+                }
             }
+        }
+    }
+    
+    /// 是否展示开启通知权限引导弹窗
+    @Published var showBootAlert = false
+    
+    private func modifyNotificationStatus(_ status: UNAuthorizationStatus, newValue: Bool) {
+        if status == .notDetermined && newValue {
+            NotificationService.shared.requestAuthorization()
+        } else if status == .denied && newValue {
+            self.isNotificationOn = false
+            self.showBootAlert = true
+        } else if (status == .authorized || status == .provisional) && !newValue {
+            self.showBootAlert = true
+            self.isNotificationOn = true
         }
     }
 }

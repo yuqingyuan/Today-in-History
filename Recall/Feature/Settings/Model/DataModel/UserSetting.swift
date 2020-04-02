@@ -8,16 +8,17 @@
 
 import Foundation
 
-enum UserSettingList: String, CaseIterable, Hashable, Identifiable {
+enum UserSettingList: String {
+    
     case notification = "消息通知"
     
-    var name: String {
-        return self.rawValue
+    enum Frequency: String {
+        case mon  = "周一"
+        case tues = "周二"
+        case wed  = "周三"
+        case thur = "周四"
+        case fri  = "周五"
+        case sat  = "周六"
+        case sun  = "周日"
     }
-    
-    var id: UserSettingList { self }
-}
-
-enum UserSettingKeys {
-    static let isNotificationOn = "is_Notification_On"
 }

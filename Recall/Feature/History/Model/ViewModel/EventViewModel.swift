@@ -8,6 +8,10 @@
 
 import Foundation
 
+#if DEBUG
+let debugViewModel = EventViewModel(0, event: HistoryEvent(picUrl: "http://www.todayonhistory.com/upic/201002/18/791933708.jpg", title: "标题", year: "2020", month: 2, day: 3, details: "内容"))
+#endif
+
 class EventViewModel: Identifiable {
     
     var id: Int

@@ -14,7 +14,7 @@ struct HistoryDetailNaviBarItem: View {
     
     var body: some View {
         Button(action: {
-            //MARK: This line didn't work on simulator
+            //MARK: Didn't work on iOS 13.4
             self.mode.wrappedValue.dismiss()
         }) {
             Image(systemName: "arrow.left")
@@ -102,7 +102,7 @@ struct HistoryDetailMainView: View {
 struct HistoryDetailMainView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            HistoryDetailMainView(viewModel: EventViewModel(0, event: HistoryEvent(picUrl: "http://www.todayonhistory.com/upic/201002/18/791933708.jpg", title: "标题", year: "2020", month: 2, day: 3, details: "内容")))
+            HistoryDetailMainView(viewModel: debugViewModel)
         }
     }
 }
