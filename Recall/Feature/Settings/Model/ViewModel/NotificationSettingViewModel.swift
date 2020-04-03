@@ -1,5 +1,5 @@
 //
-//  UserSettingViewModel.swift
+//  NotificationSettingViewModel.swift
 //  Recall
 //
 //  Created by yuqingyuan on 2020/3/31.
@@ -10,13 +10,19 @@ import Foundation
 import Combine
 import UIKit
 
-class NotificationSettingViewModel: ObservableObject {
+protocol SettingProtocol {
+    func saveSettings() -> Bool
+}
+
+class NotificationSettingViewModel: ObservableObject, SettingProtocol {
     
     private var cancellable = [Cancellable]()
+    private var settingModel = NotificationSetting()
     
     init() {
         cancellable.append(contentsOf: [notifactionChange, foregroundChange])
         syncNotificationStatus()
+        pushDate = settingModel.pushingDate
     }
     
     /// 通知是否开启(跟随系统设置)
@@ -35,6 +41,17 @@ class NotificationSettingViewModel: ObservableObject {
     
     /// 通知推送日期
     @Published var pushDate = Date()
+    
+    /// 已选重复周期
+    @Published var periodSelection = [NotificationSetting.period]()
+    
+    /// 重复周期选择列表
+    @Published var periodList = NotificationSetting.period.allCases
+    
+    //MAKR: SettingProtocol
+    @discardableResult func saveSettings() -> Bool {
+        return true
+    }
 }
 
 //MARK: - Notification

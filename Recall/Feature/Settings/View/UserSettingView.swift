@@ -9,10 +9,7 @@
 import SwiftUI
 
 struct UserSettingView: View {
-    @ObservedObject var settingViewModel = UserSettingViewModel()
-    @State var dateChoice = 0
-    @State var isRepeat = 2
-    @State var selectedDate = Date()
+    @ObservedObject var notiViewModel = NotificationSettingViewModel()
     
     var bootAlert: Alert {
         Alert(title: Text("提示"), message: Text("请在系统设置开启或关闭通知推送功能"), dismissButton: .default(Text("现在去设置"), action: {
@@ -25,24 +22,41 @@ struct UserSettingView: View {
     var body: some View {
         Form {
             Section {
-                Toggle(isOn: $settingViewModel.isNotificationOn) {
-                    Text("本地通知")
+                Toggle(isOn: $notiViewModel.isNotificationOn) {
+                    Text("消息通知")
                 }
-                Picker("频率", selection: $dateChoice) {
-                    Text("周一").tag(1)
+                NavigationLink(destination: PeriodSelectionView(viewModel: notiViewModel)) {
+                    Text("重复")
                 }
-                Picker("重复", selection: $isRepeat) {
-                    Text("是").tag(1)
-                    Text("否").tag(2)
-                }
-                DatePicker("时间", selection: $selectedDate, displayedComponents: [.hourAndMinute])
+                DatePicker("时间", selection: $notiViewModel.pushDate, displayedComponents: [.hourAndMinute])
             }
         }
         .navigationBarTitle(Text("设置"), displayMode: .large)
-        .alert(isPresented: $settingViewModel.showBootAlert) { bootAlert }
+        .navigationBarItems(trailing: Button("保存") {
+            self.notiViewModel.saveSettings()
+        })
+        .alert(isPresented: $notiViewModel.showBootAlert) { bootAlert }
     }
 }
 
+/// 通知重复周期多选列表
+struct PeriodSelectionView: View {
+    @ObservedObject var viewModel: NotificationSettingViewModel
+    
+    var body: some View {
+        List(viewModel.periodList) { value in
+            MultipleSelectionRow(title: value.description, isSelected: self.viewModel.periodSelection.contains(value)) {
+                if self.viewModel.periodSelection.contains(value) {
+                    self.viewModel.periodSelection.removeAll(where: { $0 == value })
+                } else {
+                    self.viewModel.periodSelection.append(value)
+                }
+            }
+        }
+    }
+}
+
+#if DEBUG
 struct UserSettingView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
@@ -50,3 +64,4 @@ struct UserSettingView_Previews: PreviewProvider {
         }
     }
 }
+#endif

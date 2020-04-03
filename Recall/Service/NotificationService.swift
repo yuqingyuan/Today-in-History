@@ -16,10 +16,6 @@ class NotificationService {
     
     let notificationChange = PassthroughSubject<Bool, Never>()
     
-    init() {
-        self.prepareLocalNotification()
-    }
-    
     func requestAuthorization() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (granted, error) in
             self.notificationChange.send(granted)
