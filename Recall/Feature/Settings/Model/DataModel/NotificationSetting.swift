@@ -10,7 +10,7 @@ import Foundation
 
 struct NotificationSetting {
 
-    enum period: Int, CaseIterable, CustomStringConvertible, Identifiable {
+    enum period: Int, CaseIterable, CustomStringConvertible, Identifiable, Codable {
         case mon, tues, wed, thur, fri, sat, sun
 
         var id: Int { self.rawValue }
@@ -29,8 +29,30 @@ struct NotificationSetting {
     }
     
     /// 当前重复周期
-    var currentPeriod = [NotificationSetting.period]()
+    var currentPeriod = [NotificationSetting.period.RawValue]()
     
     /// 通知推送时间
     var pushingDate = Date()
+}
+
+extension NotificationSetting: Codable {
+    
+    static let persistenceKey = "Notification_Setting"
+    
+    enum CodingKeys: String, CodingKey {
+        case currentPeriod
+        case pushingDate
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        currentPeriod = try container.decode([NotificationSetting.period.RawValue].self, forKey: .currentPeriod)
+        pushingDate = try container.decode(Date.self, forKey: .pushingDate)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(currentPeriod, forKey: .currentPeriod)
+        try container.encode(pushingDate, forKey: .pushingDate)
+    }
 }

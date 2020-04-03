@@ -22,7 +22,7 @@ struct UserSettingView: View {
     var body: some View {
         Form {
             Section {
-                Toggle(isOn: $notiViewModel.isNotificationOn) {
+                Toggle(isOn: $notiViewModel.isOn) {
                     Text("消息通知")
                 }
                 NavigationLink(destination: PeriodSelectionView(viewModel: notiViewModel)) {
@@ -45,11 +45,11 @@ struct PeriodSelectionView: View {
     
     var body: some View {
         List(viewModel.periodList) { value in
-            MultipleSelectionRow(title: value.description, isSelected: self.viewModel.periodSelection.contains(value)) {
-                if self.viewModel.periodSelection.contains(value) {
-                    self.viewModel.periodSelection.removeAll(where: { $0 == value })
+            MultipleSelectionRow(title: value.description, isSelected: self.viewModel.periodSelection.contains(value.rawValue)) {
+                if self.viewModel.periodSelection.contains(value.rawValue) {
+                    self.viewModel.periodSelection.removeAll(where: { $0 == value.rawValue })
                 } else {
-                    self.viewModel.periodSelection.append(value)
+                    self.viewModel.periodSelection.append(value.rawValue)
                 }
             }
         }

@@ -11,10 +11,11 @@ import Combine
 import UIKit
 
 protocol SettingProtocol {
-    func saveSettings() -> Bool
+    /// 保存当前设置
+    func saveSettings()
 }
 
-class NotificationSettingViewModel: ObservableObject, SettingProtocol {
+class NotificationSettingViewModel: ObservableObject {
     
     private var cancellable = [Cancellable]()
     private var settingModel = NotificationSetting()
@@ -22,11 +23,11 @@ class NotificationSettingViewModel: ObservableObject, SettingProtocol {
     init() {
         cancellable.append(contentsOf: [notifactionChange, foregroundChange])
         syncNotificationStatus()
-        pushDate = settingModel.pushingDate
+        decodeSettings()
     }
     
     /// 通知是否开启(跟随系统设置)
-    @Published var isNotificationOn: Bool = false {
+    @Published var isOn: Bool = false {
         willSet {
             NotificationService.shared.getAuthorizationStatus { status in
                 DispatchQueue.main.async {
@@ -43,14 +44,31 @@ class NotificationSettingViewModel: ObservableObject, SettingProtocol {
     @Published var pushDate = Date()
     
     /// 已选重复周期
-    @Published var periodSelection = [NotificationSetting.period]()
+    @Published var periodSelection = [NotificationSetting.period.RawValue]()
     
     /// 重复周期选择列表
     @Published var periodList = NotificationSetting.period.allCases
+}
+
+//MARK: - SettingProtocol
+extension NotificationSettingViewModel: SettingProtocol {
+    func saveSettings() {
+        settingModel.currentPeriod = periodSelection
+        settingModel.pushingDate = pushDate
+        persistSettings()
+    }
     
-    //MAKR: SettingProtocol
-    @discardableResult func saveSettings() -> Bool {
-        return true
+    func persistSettings() {
+        let data = try! JSONEncoder().encode(settingModel)
+        UserDefaults.standard.set(data, forKey: NotificationSetting.persistenceKey)
+    }
+    
+    func decodeSettings() {
+        if let data = UserDefaults.standard.value(forKey: NotificationSetting.persistenceKey) as? Data,
+            let model = try? JSONDecoder().decode(NotificationSetting.self, from: data) {
+            periodSelection = model.currentPeriod
+            pushDate = model.pushingDate
+        }
     }
 }
 
@@ -61,7 +79,7 @@ extension NotificationSettingViewModel {
         NotificationService.shared.notificationChange
             .receive(on: DispatchQueue.main)
             .sink {
-                self.isNotificationOn = $0
+                self.isOn = $0
             }
     }
 
@@ -80,8 +98,8 @@ extension NotificationSettingViewModel {
         NotificationService.shared.getAuthorizationStatus { status in
             DispatchQueue.main.async {
                 switch status {
-                case .authorized, .provisional: self.isNotificationOn = true
-                default: self.isNotificationOn = false
+                case .authorized, .provisional: self.isOn = true
+                default: self.isOn = false
                 }
             }
         }
@@ -119,11 +137,11 @@ extension NotificationSettingViewModel {
         case .notDetermined:
             NotificationService.shared.requestAuthorization()
         case .denied:
-            self.isNotificationOn = false
+            self.isOn = false
             self.showBootAlert = true
         case .authorized:
             self.showBootAlert = true
-            self.isNotificationOn = true
+            self.isOn = true
         default: break
         }
     }
