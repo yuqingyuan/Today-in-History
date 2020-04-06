@@ -44,7 +44,7 @@ class NotificationSettingViewModel: ObservableObject {
     @Published var pushDate = Date()
     
     /// 已选重复周期
-    @Published var periodSelection = [NotificationSetting.period.RawValue]()
+    @Published var periodSelection = [NotificationSetting.period]()
     
     /// 重复周期选择列表
     @Published var periodList = NotificationSetting.period.allCases
@@ -58,9 +58,24 @@ extension NotificationSettingViewModel: SettingProtocol {
         persistSettings()
     }
     
+    /// 保存通知设置
     func persistSettings() {
-        let data = try! JSONEncoder().encode(settingModel)
-        UserDefaults.standard.set(data, forKey: NotificationSetting.persistenceKey)
+        if let data = try? JSONEncoder().encode(settingModel) {
+            UserDefaults.standard.set(data, forKey: NotificationSetting.persistenceKey)
+            // 移除所有本地通知
+            NotificationService.shared.removeAlllocalNotification()
+            // 启用本地通知
+            var components = Calendar(identifier: .chinese).dateComponents([.hour, .minute], from: pushDate)
+            let dateFormat = pushDate.dateFormatter("YYYY-MM-dd")
+            for day in periodSelection {
+                components.weekday = day.rawValue
+                let identifier = String(day.rawValue) + "-" + dateFormat
+                NotificationService.shared.activateLocalNotification(identifier, repeats: true, at: components)
+            }
+            if periodSelection.isEmpty {
+                NotificationService.shared.activateLocalNotification(dateFormat, repeats: false, at: components)
+            }
+        }
     }
     
     func decodeSettings() {
