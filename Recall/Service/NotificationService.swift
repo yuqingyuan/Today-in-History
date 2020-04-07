@@ -15,6 +15,7 @@ class NotificationService {
     static let shared = NotificationService()
     
     let notificationChange = PassthroughSubject<Bool, Never>()
+    var activationChange = PassthroughSubject<Bool, Error>()
     
     /// 请求通知授权
     func requestAuthorization() {
@@ -38,16 +39,17 @@ extension NotificationService {
         content.sound = .default
         content.title = "历史上的今天"
         content.body = "快来看看今天历史上发生了什么吧～"
-        
-        if let date = dateComponents.date {
-            content.subtitle = date.dateFormatter("YYYY年MM月dd日")
-        }
+        content.subtitle = Date().dateFormatter("YYYY年M月d日")
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request) { error in
-            print(error?.localizedDescription ?? "本地通知创建成功")
+            if let error = error {
+                self.activationChange.send(completion: .failure(error))
+            } else {
+                self.activationChange.send(true)
+            }
         }
     }
     

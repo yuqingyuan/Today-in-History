@@ -17,7 +17,15 @@ protocol SettingProtocol {
 
 class NotificationSettingViewModel: ObservableObject {
     
-    private var cancellable = [Cancellable]()
+    enum AlertIdentifier: Int, Identifiable {
+        case boot       //引导
+        case success    //保存设置成功
+        case failure    //保存设置失败
+        
+        var id: Int { self.rawValue }
+    }
+    
+    private var cancellable = [AnyCancellable]()
     private var settingModel = NotificationSetting()
     
     init() {
@@ -37,8 +45,8 @@ class NotificationSettingViewModel: ObservableObject {
         }
     }
     
-    /// 是否展示开启通知权限引导弹窗
-    @Published var showBootAlert = false
+    /// 控制弹窗
+    @Published var alertIdentifier = AlertIdentifier(rawValue: -1)
     
     /// 通知推送日期
     @Published var pushDate = Date()
@@ -64,6 +72,15 @@ extension NotificationSettingViewModel: SettingProtocol {
             UserDefaults.standard.set(data, forKey: NotificationSetting.persistenceKey)
             // 移除所有本地通知
             NotificationService.shared.removeAlllocalNotification()
+            // 监听保存设置是否成功错误
+            NotificationService.shared.activationChange
+                .removeDuplicates()
+                .receive(on: DispatchQueue.main)
+                .sink(receiveCompletion: { error in
+                    self.alertIdentifier = .failure
+                }) { value in
+                    self.alertIdentifier = .success
+                }.store(in: &cancellable)
             // 启用本地通知
             var components = Calendar(identifier: .chinese).dateComponents([.hour, .minute], from: pushDate)
             let dateFormat = pushDate.dateFormatter("YYYY-MM-dd")
@@ -153,9 +170,9 @@ extension NotificationSettingViewModel {
             NotificationService.shared.requestAuthorization()
         case .denied:
             self.isOn = false
-            self.showBootAlert = true
+            self.alertIdentifier = .boot
         case .authorized:
-            self.showBootAlert = true
+            self.alertIdentifier = .boot
             self.isOn = true
         default: break
         }

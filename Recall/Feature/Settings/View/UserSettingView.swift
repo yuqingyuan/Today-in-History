@@ -35,7 +35,19 @@ struct UserSettingView: View {
         .navigationBarItems(trailing: Button("保存") {
             self.notiViewModel.saveSettings()
         })
-        .alert(isPresented: $notiViewModel.showBootAlert) { bootAlert }
+        .alert(item: $notiViewModel.alertIdentifier) { identifier in
+            switch identifier {
+            case .boot: return bootAlert
+            case .success: return saveStatusAlert(true)
+            case .failure: return saveStatusAlert(false)
+            }
+        }
+    }
+}
+
+extension UserSettingView {
+    func saveStatusAlert(_ isSuccess: Bool) -> Alert {
+        Alert(title: isSuccess ? Text("设置保存成功") : Text("设置保存失败，请重试"))
     }
 }
 
