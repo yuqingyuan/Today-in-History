@@ -43,6 +43,7 @@ extension Binding where Value == Bool {
     }
 }
 
+#if !os(macOS)
 struct MultipleSelectionRow: View {
     var title: String
     var isSelected: Bool
@@ -62,3 +63,4 @@ struct MultipleSelectionRow: View {
         .foregroundColor(.primary)
     }
 }
+#endif

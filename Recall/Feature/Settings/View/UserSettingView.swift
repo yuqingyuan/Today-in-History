@@ -31,7 +31,7 @@ struct UserSettingView: View {
                 DatePicker("时间", selection: $notiViewModel.pushDate, displayedComponents: [.hourAndMinute])
             }
         }
-        .navigationBarTitle(Text("设置"), displayMode: .large)
+        .navigationBarTitle(Text("设置"), displayMode: .automatic)
         .navigationBarItems(trailing: Button("保存") {
             self.notiViewModel.saveSettings()
         })

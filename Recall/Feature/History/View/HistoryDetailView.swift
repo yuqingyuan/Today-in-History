@@ -72,7 +72,7 @@ struct HistoryDetailMainView: View {
             Spacer()
         }
         .edgesIgnoringSafeArea([.bottom])
-        .navigationBarTitle(Text(viewModel.dateStr), displayMode: .large)
+        .navigationBarTitle(Text(viewModel.dateStr), displayMode: .automatic)
     }
 }
 

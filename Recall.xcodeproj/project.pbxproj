@@ -55,7 +55,6 @@
 		05E2B24C2431F64F0004904F /* RecallNotification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05E2B23D2431F64E0004904F /* RecallNotification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		05E2B2582431F66F0004904F /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B2572431F66F0004904F /* NotificationService.swift */; };
 		05E2B25C2431F66F0004904F /* RecallNotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05E2B2552431F66F0004904F /* RecallNotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		05E2B2622432D7BF0004904F /* NavigationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B2612432D7BF0004904F /* NavigationExtension.swift */; };
 		05E2B2642432E0080004904F /* DeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B2632432E0080004904F /* DeviceHelper.swift */; };
 		05E2B26724332CB60004904F /* UserSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B26624332CB60004904F /* UserSettingView.swift */; };
 		05E2B26B2433339A0004904F /* NotificationSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2B26A2433339A0004904F /* NotificationSetting.swift */; };
@@ -197,7 +196,6 @@
 		05E2B2552431F66F0004904F /* RecallNotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RecallNotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		05E2B2572431F66F0004904F /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		05E2B2592431F66F0004904F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05E2B2612432D7BF0004904F /* NavigationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationExtension.swift; sourceTree = "<group>"; };
 		05E2B2632432E0080004904F /* DeviceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHelper.swift; sourceTree = "<group>"; };
 		05E2B26624332CB60004904F /* UserSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingView.swift; sourceTree = "<group>"; };
 		05E2B26A2433339A0004904F /* NotificationSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSetting.swift; sourceTree = "<group>"; };
@@ -366,7 +364,6 @@
 		05E2B1E124318F840004904F /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				05E2B2602432D78A0004904F /* Extension */,
 				05E2B1E224318FD10004904F /* SwiftUIHelper.swift */,
 				05E2B2632432E0080004904F /* DeviceHelper.swift */,
 				056F003B243B281D0040F157 /* FoundationHelper.swift */,
@@ -472,14 +469,6 @@
 				05E2B2592431F66F0004904F /* Info.plist */,
 			);
 			path = RecallNotificationService;
-			sourceTree = "<group>";
-		};
-		05E2B2602432D78A0004904F /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				05E2B2612432D7BF0004904F /* NavigationExtension.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		05E2B26524332C910004904F /* Settings */ = {
@@ -790,7 +779,6 @@
 				05E2B26B2433339A0004904F /* NotificationSetting.swift in Sources */,
 				05E2B27224336BD30004904F /* NotificationService.swift in Sources */,
 				7A7446C22421BBE00065C2F1 /* HistoryDetailView.swift in Sources */,
-				05E2B2622432D7BF0004904F /* NavigationExtension.swift in Sources */,
 				05E2B1E324318FD10004904F /* SwiftUIHelper.swift in Sources */,
 				05F46517240C245700B86A91 /* HistoryEvent.swift in Sources */,
 				056F003C243B281D0040F157 /* FoundationHelper.swift in Sources */,
