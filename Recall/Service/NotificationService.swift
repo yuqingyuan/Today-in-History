@@ -39,7 +39,6 @@ extension NotificationService {
         content.sound = .default
         content.title = "历史上的今天"
         content.body = "快来看看今天历史上发生了什么吧～"
-        content.subtitle = Date().dateFormatter("YYYY年M月d日")
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
