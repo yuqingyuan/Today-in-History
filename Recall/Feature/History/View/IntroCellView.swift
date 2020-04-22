@@ -9,9 +9,30 @@
 import SwiftUI
 import KingfisherSwiftUI
 
+struct Thumbnail: View {
+    let picURL: URL
+    @State var error: Bool = false
+    
+    var body: some View {
+        KFImage(picURL)
+            .placeholder {
+                if self.error {
+                    Image(systemName: "exclamationmark.triangle")
+                } else {
+                    Image(systemName: "photo")
+                }
+            }
+            .onFailure { _ in
+                self.error = true
+            }
+            .resizable()
+    }
+}
+
 struct IntroCellView: View {
 
     @State var viewModel: EventViewModel
+    @State var error: Bool = false
     var hasPic: Bool {
         viewModel.picURL != nil
     }
@@ -32,8 +53,7 @@ struct IntroCellView: View {
                 HStack {
                     HStack {
                         if(self.hasPic) {
-                            KFImage(self.viewModel.picURL)
-                                .resizable()
+                            Thumbnail(picURL: self.viewModel.picURL!)
                                 .frame(width: geo.size.height*0.6, height: geo.size.height*0.6, alignment: .center)
                                 .cornerRadius(12)
                                 .padding([.leading], 14)
