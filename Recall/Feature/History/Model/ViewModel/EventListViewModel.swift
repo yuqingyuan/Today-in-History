@@ -12,18 +12,27 @@ import Combine
 class EventListViewModel: ObservableObject {
     
     @Published var events: [EventViewModel] = []
-    @Published var isLoading: Bool = false
+    @Published var loading: Bool = false
+    @Published var error: Bool = false
     
     private let publisher = HistoryEventRequest().publisher
-    private var cancellable: Cancellable? = nil
+    private var cancellable = [AnyCancellable]()
     
     func fetch() {
-        self.isLoading.toggle()
-        self.cancellable = publisher
-            .sink(receiveCompletion: { complete in
-                self.isLoading.toggle()
+        self.loading.toggle()
+        
+        publisher
+            .sink(receiveCompletion: { result in
+                switch result {
+                case .failure(let error):
+                    print(error)
+                    self.error.toggle()
+                    fallthrough
+                default:
+                    self.loading.toggle()
+                }
             }, receiveValue: { value in
                 self.events = value
-            })
+            }).store(in: &cancellable)
     }
 }

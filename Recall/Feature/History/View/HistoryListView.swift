@@ -39,6 +39,9 @@ struct HistoryListView: View {
         List(viewModel.events) {
             ListViewCell(viewModel: $0)
         }
+        .alert(isPresented: $viewModel.error, content: {
+            Alert(title: Text("请求出现未知错误,请重试"))
+        })
         .onAppear {
             UITableView.appearance().separatorStyle = .none
         }
@@ -53,7 +56,7 @@ struct MainView: View {
             ZStack(alignment: .bottomTrailing) {
                 HistoryListView(viewModel: viewModel)
                 
-                ReloadButton(isLoading: $viewModel.isLoading) {
+                ReloadButton(isLoading: $viewModel.loading) {
                     self.viewModel.fetch()
                 }
                 .shadow(radius: 10)
